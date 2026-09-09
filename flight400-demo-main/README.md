@@ -9,7 +9,7 @@
 
 ## Part 0 — Environment Setup 
 
-#### Note: Instructors need to complete steps laid out in the [Instructor Setup README](instructor-setup/README.md)
+> **Before you begin:** Your instructor must have restored the FLIGHT400 application on IBM i and created your assigned `FLGHT4nn` library. For the optional React warm-up exercise, Node.js 22 and npm must also be installed on IBM i. Your instructor will provide your connection details and library assignment.
 
 ---
 
@@ -916,7 +916,7 @@ Congratulations! In this lab you:
 
 | Exercise | What You Did |
 |---|---|
-| **Setup** | Restored the FLIGHT400 application onto IBM i from a save file |
+| **Setup** | Connected to IBM i and selected your assigned FLIGHT400 library |
 | **Exercise 1** | Generated architecture docs and an ERD with Bob |
 | **Exercise 2** | Explained and modernized OPM RPG `FRS409` to free-format ILE RPG |
 | **Exercise 3** | Added a new field to a 5250 display file with Bob's help |
