@@ -50,6 +50,7 @@ Throughout the labs, participants must only use **their assigned number** so eve
 ![add library](pics/add-library.png)
 
 All set! You are now ready to start the exercises.
+
 ---
 
 ## Exercise 1 — Code Explanation & Architecture Documentation
