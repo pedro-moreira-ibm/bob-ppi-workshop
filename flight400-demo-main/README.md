@@ -560,13 +560,11 @@ Screen:    FRS021DF.SFLHRS
 
 In this exercise, you will review a complex SQL query written by a junior developer, validate it, and apply Bob's index advisor to improve performance.
 
-### 4.1. Switch to IBM i Database mode
+### 4.1. Review the query with Bob
 
 1. In the Bob chat panel, use the mode selector to switch to **IBM i Database** mode.
 
-### 4.2. Review the query with Bob
-
-Imagine the scenario where a junior developer wrote the following query to summarize flight bookings per flight per agent.
+2. Imagine the scenario where a junior developer wrote the following query to summarize flight bookings per flight per agent.
 
 ```sql
 -- ============================================================
@@ -627,7 +625,7 @@ FETCH FIRST 100 ROWS ONLY;
 ```
 
 
-1. ⚠️ Ask Bob to review the following SQL query using the comand `/review`, and replacing `nn` in the query with the two-digit suffix of your assigned library, (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`), before pasting it into Bob.
+3. ⚠️ Ask Bob to review the following SQL query using the comand `/review`, and replacing `nn` in the query with the two-digit suffix of your assigned library, (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`), before pasting it into Bob.
 
 ![review slash 1](pics/slash-review-1.jpeg)
 ![review slash 2](pics/slash-review-2.jpeg)
@@ -656,8 +654,6 @@ Bob should identify that:
 - The query filters on `DEPARTURE_DATE`
 - Only a small fraction of rows qualify for the selected date range
 - The date-range predicate is highly selective and a strong candidate for index optimization
-
-💡 This step is informational and may vary slightly depending on the optimizer and statistics available in your environment.
 
 ### 4.4. Run the Index Advisor workflow
 
@@ -733,8 +729,7 @@ Apply the highest-priority index only for FLGHT4nn
 
 ## Exercise 5 — Ask Bob about your system
 
-In this exercise, you will use Bob in IBM i Developer mode to answer system-level questions using two natural language prompts. This exercise takes about 10 minutes to complete.
-
+In this exercise, you will use Bob in IBM i Developer mode to answer system-level questions using two natural language prompts.
 1. Switch back to **IBM i Developer** mode.
    
 2. Ask Bob which active jobs have accumulated the most CPU time:
@@ -750,6 +745,7 @@ Inspect the job ranked first and determine whether it is currently CPU-bound. Ch
 ```
 
 Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table function and return a summary of active jobs with CPU utilization — giving you an instant health check on your LPAR, then use other tools to read the logs and other information, and create a first report. You might see the Node.js job running if you completed the optional React exercise and never stopped the web server.
+
 
 4. Try to ask Bob which programs have not been recompiled in the last five years:
 
@@ -769,7 +765,7 @@ Bob will query `QSYS2.OBJECT_STATISTICS` filtering on object type `*PGM` in `FLG
 
 ## Exercise 6 — RPGUnit test planning & implementation
 
-In this exercise, you will use Bob's guided RPGUnit workflows to build a structured test plan for an IBM i program, then implement and run the test suites. This exercise takes about 20 minutes to complete.
+In this exercise, you will use Bob's guided RPGUnit workflows to build a structured test plan for an IBM i program, then implement and run the test suites.
 
 These two workflows work together in sequence:
 
@@ -782,7 +778,6 @@ These two workflows work together in sequence:
    - Open VS Code Extensions, search for **"IBM i Testing"**, and click **Install**.
 
 2. **Install RPGUnit to IBM i**
-   - Connect to your IBM i.
    - Open Code for IBM i connection settings (gear icon, bottom of screen).
    - Navigate to the **Components** tab → **Add Component** → select **RPGUnit** → **Install**.
 
@@ -865,9 +860,9 @@ Bob will generate the test source members, run the suites, and iterate until the
 
 ---
 
-## Optional exercise: Generate a React Carbon app from a green screen
+## Exercise 7 (OPTIONAL) - Generate a React Carbon app from a green screen
 
-In this exercise, you will use Bob in **IBM i Developer** mode to analyze the FLIGHT400 *Create Order* 5250 screen and generate a modern React web application styled with the IBM Carbon Design System, running directly on IBM i PASE. This will take about 30 minutes to complete.
+In this exercise, you will use Bob in **IBM i Developer** mode to analyze the FLIGHT400 *Create Order* 5250 screen and generate a modern React web application styled with the IBM Carbon Design System, running directly on IBM i PASE.
 
 ![Flight400 React agentic demo](pics/Flight-react-agentic.png)
 
@@ -1000,6 +995,6 @@ Congratulations! In this lab you:
 | **Exercise 4** | Reviewed and optimized a SQL query using Bob's database tools |
 | **Exercise 5** | Queried your IBM i system using natural language |
 | **Exercise 6** | Created and implemented an RPGUnit test suite with Bob's guided workflows |
-| **Optional exercise** | UI modernization, 5250 to React |
+| **Exercise 7** | UI modernization, 5250 to React |
 
 **Next steps:** Explore connecting the React app to live IBM i data via a Node.js or Java REST API, or dive deeper into the RPG modernization workflow for the other FLIGHT4nn programs.
