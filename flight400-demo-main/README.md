@@ -97,9 +97,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 <br>
 💡 Note: Bob can also integrate with external diagramming tools such as Draw.io, allowing you to generate richer, editable architecture diagrams from the application analysis.
 <br>
-
 ![draw io](pics/drawIo.png)
-
 <br>
 
 ### 1.5. *(Optional)* Generate Business Rules Extraction (5 minutes)
