@@ -21,7 +21,7 @@
 
 ⚠️ The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list.
 
-⚠️ Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs.
+1. ⚠️ Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs.
 
 | Student # | Library | Dev Port | React App URL |
 |:---------:|---------|:--------:|---------------|
@@ -37,9 +37,9 @@
 1. In Bob IDE, open the IBM i panel (left sidebar).
 2. Click **New Connection** and enter the following data:
 
-- Host IP:
-- User profile: ITZUSER
-- Private key found [here](ssh_private_key.pem).
+   - Host IP:
+   - User profile: ITZUSER
+   - Private key found [here](ssh_private_key.pem).
 
 ![i connection](pics/i-connection.png)
 
@@ -108,7 +108,7 @@ Drill down on a specific member by generating a functional business document usi
 
 ![workflows icon](pics/workflows-icon.png)
 
-When prompted, use the following selections:
+2. When prompted, use the following selections:
 
 | Option | Value |
 |---|---|
@@ -116,9 +116,9 @@ When prompted, use the following selections:
 | Select Source File | QRPGLESRC |
 | Select Member | FRS401.RPGLE |
 
-2. Watch Bob create a guided workflow to get the necessary data and generate a complete report describing a business function. Bob will use subagents to create a document outlining business rules, decision logic, mermaid diagrams, process flows, etc. Documentation is written in business-friendly language, not technical jargon.
+3. Watch Bob create a guided workflow to get the necessary data and generate a complete report describing a business function. Bob will use subagents to create a document outlining business rules, decision logic, mermaid diagrams, process flows, etc. Documentation is written in business-friendly language, not technical jargon.
 
-3. At the end, specify an output location on the IFS **unique to your library number**. For example: /home/ITZUSER/flght400/docs/business-rules/FRS401-2026-07-16T19-34-14.md
+4. At the end, specify an output location on the IFS **unique to your library number**. For example: /home/ITZUSER/flght400/docs/business-rules/FRS401-2026-07-16T19-34-14.md
 
 ![IFS location](pics/IFS-location.png)
 
@@ -161,22 +161,23 @@ Can you use a workflow to modernize this program?
    - Accept the other defaults and click **Analyze Member**.
 
 Bob spins up a subagent to convert the fixed-format RPG to modern free-format ILE RPG.
-Then Bob runs the **Code for IBM i** compile action for ILE RPG, triggering a `CRTBNDRPG` command on your LPAR. Watch the output in the terminal panel.
 
-4. Bob will also prompt: **"Confirm Output Member Location"** — ensure the suggested location has the path with your library number and continue. Bob will use all its RPG skills to modernize this source code. Approve the requested tasks.
+4. Then Bob runs the **Code for IBM i** compile action for ILE RPG, triggering a `CRTBNDRPG` command on your LPAR. Watch the output in the terminal panel.
 
-5. Take a look at your new modernized file at `FLGHT4nn/QRPGLESRC/FRS409.RPLGE`
+5. Bob will also prompt: **"Confirm Output Member Location"** — ensure the suggested location has the path with your library number and continue. Bob will use all its RPG skills to modernize this source code. Approve the requested tasks.
+
+6. Take a look at your new modernized file at `FLGHT4nn/QRPGLESRC/FRS409.RPLGE`
 
 ### 2.3. Review the modernization summary
 
-Bob automatically generates a **Modernization Summary Report** in the Bob chat. It includes:
+1. Review the **Modernization Summary Report** that Bob automatically generates in the Bob chat. It includes:
 
-- What was changed and why
-- Lines of code before vs. after
-- Opcode-by-opcode conversion notes
-- Compilation result
+   - What was changed and why
+   - Lines of code before vs. after
+   - Opcode-by-opcode conversion notes
+   - Compilation result
 
-1. Ask Bob to save this information into a new file in your workspace.
+2. Ask Bob to save this information into a new file in your workspace.
 
 ```text
 Using the generated information, create a file named 'FRS409-Modernization-Report.md' in my workspace.
@@ -212,7 +213,7 @@ For this demonstration, Bob should update only the direct Flight Maintenance pat
 
 Begin with the part of the application visible to the user.
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.
@@ -230,7 +231,9 @@ Bob should also identify the screen-field naming pattern, including `SFLGHT`, `S
 
 ### 3.2. Trace the existing pattern and perform an impact analysis
 
-The new business requirement is to add *Total Flight Hours* to the Flight Maintenance application. Use these fixed requirements:
+The new business requirement is to add *Total Flight Hours* to the Flight Maintenance application.
+
+1. Use these fixed requirements:
 
 | Attribute | Value |
 |---|---|
@@ -246,7 +249,7 @@ The new business requirement is to add *Total Flight Hours* to the Flight Mainte
 
 The database and screen fields use different names because this application uses an `S` prefix for screen fields.
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+2. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
@@ -275,7 +278,7 @@ The minimum source members for the direct demonstration should be:
 - `FLGHT4nn/QDDSSRCD(FRS021DF)`
 - `FLGHT4nn/QRPGSRC(FRS021)`
 
-Bob may identify additional affected programs such as programs that use `FLIGHTS` or `FLIGHTSZ`. Those should be recorded as follow-up items but not changed during this demonstration.
+3. If Bob identifies additional affected programs such as programs that use `FLIGHTS` or `FLIGHTSZ`, record them as follow-up items but do not change them during this demonstration.
 
 &nbsp;
 **After the prompt**
@@ -288,7 +291,7 @@ Bob may identify additional affected programs such as programs that use `FLIGHTS
 
 ### 3.3. Add the database and logical-file fields
 
-⚠️ Ask Bob to prepare the database DDS changes using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob to prepare the database DDS changes using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update the DDS source for the direct database path:
@@ -317,17 +320,17 @@ FHRS                      RENAME(FLHRS)
 
 &nbsp;
 
-**Review the differences** and confirm that:
+2. **Review the differences** and confirm that:
 
-- The PF field is named `FLHRS`.
-- The logical/RPG field is named `FHRS`.
-- The field has four digits and zero decimal positions.
-- `ALWNULL` was not added.
-- `COLHDG` appears only in the physical-file DDS.
-- Existing keys and fields were not changed.
-- `FLIGHTSZ` retains its existing record-format and key definitions.
+   - The PF field is named `FLHRS`.
+   - The logical/RPG field is named `FHRS`.
+   - The field has four digits and zero decimal positions.
+   - `ALWNULL` was not added.
+   - `COLHDG` appears only in the physical-file DDS.
+   - Existing keys and fields were not changed.
+   - `FLIGHTSZ` retains its existing record-format and key definitions.
 
-1. If the changes are correct, tell Bob:
+3. If the changes are correct, tell Bob:
 
 ```text
 I approve these two DDS source changes. Save both source members, but do not compile them yet.
@@ -345,7 +348,7 @@ I approve these two DDS source changes. Save both source members, but do not com
 
 ### 3.4. Add the screen field
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.
@@ -357,18 +360,18 @@ Show the proposed diff and updated DDS preview. Do not save or compile anything 
 
 &nbsp;
 
-**Review the differences** and confirm that:
+2. **Review the differences** and confirm that:
 
-- The screen field is named `SFLHRS`.
-- It is four digits with zero decimal positions.
-- It is an input/output field.
-- Its visible label is implemented as display constant text.
-- `CHECK(RZ)` is present.
-- `COLHDG` is not present.
-- The field appears immediately after Mileage.
-- No screen content overlaps or becomes truncated.
+   - The screen field is named `SFLHRS`.
+   - It is four digits with zero decimal positions.
+   - It is an input/output field.
+   - Its visible label is implemented as display constant text.
+   - `CHECK(RZ)` is present.
+   - `COLHDG` is not present.
+   - The field appears immediately after Mileage.
+   - No screen content overlaps or becomes truncated.
 
-If it is correct, tell Bob:
+3. If it is correct, tell Bob:
 
 ```text
 I approve the display-file change. Save FRS021DF, but do not compile it yet.
@@ -384,11 +387,11 @@ I approve the display-file change. Save FRS021DF, but do not compile it yet.
 | Save | Yes, save `FRS021DF` |
 | Compile | No |
 
-Proceed when Bob confirms that the source was saved and shows the updated preview.
+4. Proceed when Bob confirms that the source was saved and shows the updated preview.
 
 ### 3.5. Update the RPG program
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QRPGSRC(FRS021) to handle Total Flight Hours using the existing Mileage implementation as the pattern.
@@ -411,16 +414,16 @@ Do not modify any other programs during this demonstration. Show the proposed di
 
 &nbsp;
 
-**Review the differences** and confirm that:
+2. **Review the differences** and confirm that:
 
-- Only `FRS021` is being changed.
-- The record length and field positions are correct.
-- Both retrieve and save directions are covered.
-- Both add and update output specifications include `FHRS`.
-- The existing style and fixed-column alignment are preserved.
-- Bob is not modifying secondary dependencies.
+   - Only `FRS021` is being changed.
+   - The record length and field positions are correct.
+   - Both retrieve and save directions are covered.
+   - Both add and update output specifications include `FHRS`.
+   - The existing style and fixed-column alignment are preserved.
+   - Bob is not modifying secondary dependencies.
 
-If it is correct, tell Bob:
+3. If it is correct, tell Bob:
 
 ```text
 I approve the FRS021 changes. Save the source member, but do not compile it yet.
@@ -436,11 +439,11 @@ I approve the FRS021 changes. Save the source member, but do not compile it yet.
 | Save | Yes, save `FRS021` |
 | Compile | No |
 
-Proceed when Bob confirms that the updated source was saved and read back successfully.
+4. Proceed when Bob confirms that the updated source was saved and read back successfully.
 
 ### 3.6. Build the direct demo path
 
-⚠️ Ask Bob to compile only the direct Flight Maintenance path using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob to compile only the direct Flight Maintenance path using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Build only the direct Flight Maintenance path in this order:
@@ -480,14 +483,14 @@ CRTRPGPGM PGM(FLGHT4nn/FRS021)
 
 Bob should verify the exact commands against the environment before executing them.
 
-- **If a compile succeeds:** allow Bob to continue to the next object in the four-object sequence. No additional approval is needed between successful compiles.
-- **If a compile fails:** do not allow Bob to begin modifying secondary programs or exhaustively investigating the entire application. Ask Bob:
+2. **If a compile succeeds:** allow Bob to continue to the next object in the four-object sequence. No additional approval is needed between successful compiles.
+3. **If a compile fails:** do not allow Bob to begin modifying secondary programs or exhaustively investigating the entire application. Ask Bob:
 
 ```text
 Explain the direct cause of this compile error and propose the smallest correction limited to the four demo objects. Do not modify anything yet.
 ```
 
-Review the proposed correction before approving it.
+4. If a compile failed, review the proposed correction before approving it.
 
 &nbsp;
 
@@ -499,13 +502,13 @@ Review the proposed correction before approving it.
 | Save | Only if an error requires a reviewed correction |
 | Compile | Yes, only `FLIGHTS`, `FLIGHTSZ`, `FRS021DF`, and `FRS021` |
 
-Proceed when all four objects compile successfully, or Bob stops at the first failure and reports it.
+5. Proceed when all four objects compile successfully, or Bob stops at the first failure and reports it.
 
-⚠️ **Note:** If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the Bobathon or leave it as an item at the end.
+6. ⚠️ **Note:** If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the Bobathon or leave it as an item at the end.
 
 ### 3.7. Validate the result
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+1. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Validate the completed Total Flight Hours change for the direct Flight Maintenance path.
@@ -535,11 +538,11 @@ Screen:    FRS021DF.SFLHRS
 | Save | No |
 | Compile | No |
 
-Proceed when Bob confirms the database, logical-file, RPG, and screen definitions.
+2. Proceed when Bob confirms the database, logical-file, RPG, and screen definitions.
 
 ### 3.8. Look at the resulting changes
 
-Repeat step 3.1. You should now see the new Flight Hours field on the flight schedule screen!
+1. Repeat step 3.1. You should now see the new Flight Hours field on the flight schedule screen!
 
 ![newfield](pics/newfield.png)
 
@@ -559,18 +562,18 @@ In this exercise, you will review a complex SQL query written by a junior develo
 
 ### 4.1. Switch to IBM i Database mode
 
-In the Bob chat panel, use the mode selector to switch to **IBM i Database** mode.
+1. In the Bob chat panel, use the mode selector to switch to **IBM i Database** mode.
 
 ### 4.2. Review the query with Bob
 
-A junior developer wrote the following query to summarize flight bookings per flight per agent. Paste it into the Bob chat using the `/review` slash command:
+A junior developer wrote the following query to summarize flight bookings per flight per agent.
 
-**Note: Make sure to type `/review` first to ensure Bob recognizes the command, then paste the rest so `/review` is highlighted:**
+1. Type `/review` first to ensure Bob recognizes the command, then paste the query in the next step so `/review` is highlighted:
 
 ![review slash 1](pics/slash-review-1.jpeg)
 ![review slash 2](pics/slash-review-2.jpeg)
 
-⚠️ Ask Bob to review the following SQL query using `/review`, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+2. ⚠️ Ask Bob to review the following SQL query using `/review`, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```sql
 -- ============================================================
@@ -642,7 +645,7 @@ Bob may inspect the connected IBM i catalog to verify names and data types. Exac
 
 ### 4.3. Explain the performance characteristics (optional)
 
-After Bob has reviewed and corrected the query, ask:
+1. After Bob has reviewed and corrected the query, ask:
 
 ```text
 Is any table a performance bottleneck and why?
@@ -659,13 +662,13 @@ Bob should identify that:
 
 ### 4.4. Run the Index Advisor workflow
 
-Still in **IBM i Database** mode, click the workflow icon at the top of the Bob panel, choose to run workflow in library list, and select **SQL Index Strategy Advisor**.
+1. Still in **IBM i Database** mode, click the workflow icon at the top of the Bob panel, choose to run workflow in library list, and select **SQL Index Strategy Advisor**.
 
 ![workflows icon](pics/workflows-icon.png)
 
 **Workflow configuration**
 
-When prompted, use the following selections:
+2. When prompted, use the following selections. Use an appropriate output library and object name when prompted.
 
 | Setting | Value |
 |---|---|
@@ -675,8 +678,6 @@ When prompted, use the following selections:
 | Output Object Name | FLGHT4nnP or something short but custom to your number |
 | Top N Queries | 20 |
 | Top N Category | Runtime |
-
-Use an appropriate output library and object name when prompted.
 
 ⚠️ **Important lab rule — only create indexes in your assigned schema:**
 
@@ -688,13 +689,14 @@ Use an appropriate output library and object name when prompted.
 Bob may discover similar recommendations in multiple `FLGHT4nn` schemas — this is expected because each schema contains a copy of the same application data. Do not create indexes in schemas that were not assigned to you.
 
 The workflow may:
-1. Capture and analyze SQL performance data
-2. Examine plan cache information
-3. Review Index Advisor recommendations
-4. Examine any temporary index activity (MTIs)
-5. Identify candidate permanent indexes
-6. Generate `CREATE INDEX` statements
-7. Explain the expected performance benefit of each index
+
+- Capture and analyze SQL performance data
+- Examine plan cache information
+- Review Index Advisor recommendations
+- Examine any temporary index activity (MTIs)
+- Identify candidate permanent indexes
+- Generate `CREATE INDEX` statements
+- Explain the expected performance benefit of each index
 
 **Expected outcome** — recommendations may vary slightly depending on optimizer behavior, existing plan cache contents, and system state. Most attendees should receive recommendations similar to:
 
@@ -716,9 +718,9 @@ CREATE INDEX FLGHT4nn.ORDERS_IDX_AGT_DEP
     );
 </pre>
 
-For this lab, review and create the highest-priority recommendation for your assigned schema — typically the index starting with `(DEPARTURE_DATE, FLIGHT_NUMBER)`. This index directly supports the query's selective date-range predicate and is generally the most impactful recommendation.
+3. For this lab, review the highest-priority recommendation for your assigned schema — typically the index starting with `(DEPARTURE_DATE, FLIGHT_NUMBER)`. This index directly supports the query's selective date-range predicate and is generally the most impactful recommendation.
 
-⚠️ Ask Bob to apply the recommended index using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+4. ⚠️ Ask Bob to apply the recommended index using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Apply the highest-priority index only for FLGHT4nn
@@ -734,15 +736,15 @@ Apply the highest-priority index only for FLGHT4nn
 
 In this exercise, you will use Bob in IBM i Developer mode to answer system-level questions using two natural language prompts. This exercise takes about 10 minutes to complete.
 
-Switch back to **IBM i Developer** mode and try these prompts:
+1. Switch back to **IBM i Developer** mode and try these prompts:
 
-**Prompt 1:**
+2. Enter **Prompt 1:**
 
 ```text
 Which active jobs have accumulated the most CPU time? For the top jobs, distinguish cumulative CPU time from their current elapsed CPU percentage.
 ```
 
-**Prompt 2 (optional):**
+3. Enter **Prompt 2 (optional):**
 
 ```text
 Inspect the job ranked first and determine whether it is currently CPU-bound. Check its job log and take one fresh elapsed CPU measurement. If the log is empty and the job is a PASE process, inspect its IFS job information for its executable, working directory, and open application or log files. Stop after that investigation. Distinguish facts from inferences and provide no more than two recommendations
@@ -750,9 +752,9 @@ Inspect the job ranked first and determine whether it is currently CPU-bound. Ch
 
 Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table function and return a summary of active jobs with CPU utilization — giving you an instant health check on your LPAR, then use other tools to read the logs and other information, and create a first report. You might see the Node.js job running if you completed the optional React exercise and never stopped the web server.
 
-**Prompt 3:**
+4. Enter **Prompt 3:**
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+   ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Which programs in the FLGHT4nn library have not been recompiled in the last 5 years?
@@ -839,9 +841,9 @@ This module is a clean target for the RPGUnit workflows: it's `NOMAIN`, has one 
 10. Choose to **validate the environment** as recommended and proceed.
 11. Install RPGUnit and add to library list if prompted; do the same for `QDEVTOOLS`.
 
-Bob will write the test plan documents and store them in the IFS directory you specified. At the bottom of the chat panel, review the files it created — these Markdown documents will be used in step 6.3.
+12. Bob will write the test plan documents and store them in the IFS directory you specified. At the bottom of the chat panel, review the files it created — these Markdown documents will be used in step 6.3.
 
-💡 If Bob asks to run the RPGUnit Test Plan Creation workflow again at any point, select **No thanks**.
+13. 💡 If Bob asks to run the RPGUnit Test Plan Creation workflow again at any point, select **No thanks**.
 
 ### 6.3. Run the RPGUnit Test Suite Implementation workflow
 
@@ -856,7 +858,7 @@ Bob will generate the test source members, run the suites, and iterate until the
 
 ![Tests pass](pics/tests-pass.png)
 
-💡 If any tests fail, ask Bob to explain the failure and help fix it.
+7. 💡 If any tests fail, ask Bob to explain the failure and help fix it.
 
 &nbsp;
 
@@ -881,9 +883,13 @@ The SSH tunnel forwards the services needed for this lab to your local machine:
 - `<DEV_PORT>` — your assigned development port, used for the React/Vite application.
 - `50000` — used for the IBM i 5250 connection.
 
+3. 💡 Replace `<DEV_PORT>` with the port assigned to your library. For example, `FLGHT401` uses port `3001`, `FLGHT402` uses port `3002`, and so on.
+
+4. 💡 Replace `<myuser>@<myIPaddress>` with the connection information provided by TechZone.
+
 #### For Windows users:
 
-Open **PowerShell or Windows Terminal as Administrator**, navigate to your lab folder, and run:
+1. Open **PowerShell or Windows Terminal as Administrator**, navigate to your lab folder, and run:
 
 ```bash
 ssh -N -L <DEV_PORT>:localhost:<DEV_PORT> -L 50000:localhost:23 -i .\ssh_private_key.pem <myuser>@<myIPaddress>
@@ -891,17 +897,15 @@ ssh -N -L <DEV_PORT>:localhost:<DEV_PORT> -L 50000:localhost:23 -i .\ssh_private
 
 #### For macOS / Linux users:
 
-Open a terminal, navigate to your lab folder, and run:
+1. Open a terminal, navigate to your lab folder, and run:
 
 ```bash
 chmod 600 ./ssh_private_key.pem && ssh -N -L <DEV_PORT>:localhost:<DEV_PORT> -L 50000:localhost:23 -i ./ssh_private_key.pem <myuser>@<myIPaddress>
 ```
 
-💡 Replace `<DEV_PORT>` with the port assigned to your library. For example, `FLGHT401` uses port `3001`, `FLGHT402` uses port `3002`, and so on.
+#### After connecting (all platforms):
 
-💡 Replace `<myuser>@<myIPaddress>` with the connection information provided by TechZone.
-
-💡 Keep this terminal open while working on the lab. Closing the SSH session will close the tunnel.
+1. 💡 Keep this terminal open while working on the lab. Closing the SSH session will close the tunnel.
 
 ### Sharpen your skill
 
@@ -921,9 +925,9 @@ Bob creates a new Skill that improves its awareness of PASE-specific details for
 
 ### Prompt in Bob chat UI
 
-- Switch to IBM i Developer mode, then Click on the `+` button (top right) and select  the `FLGHT4nn` (library list) as a context of for the task. Paste this [screenshot](./pics/flight400.png) alongside the following prompt:
+1. Switch to IBM i Developer mode, then Click on the `+` button (top right) and select  the `FLGHT4nn` (library list) as a context of for the task. Paste this [screenshot](./pics/flight400.png) alongside the following prompt:
 
-⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
+2. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
 
 ```text
 Given this screenshot of the 5250 flight order screen from the Application Flight4nn in @FLGHT4nn, Build a single-page React 18 + Vite 4 app on IBM i (PASE) using @carbon/react ^1.x with dark theme that modernizes the IBM i 5250 screen shown in the attached screenshot. Create the app in the IFS at $HOME/flight4nn-frontend-apps/screen-name/. Use the g100 dark theme. All fields should have a list of values to select from. Pin the Vite dev server to port 30nn if available. Launch the server, and give the final URL.
@@ -940,9 +944,9 @@ Bob generates a full React application, including:
 - The RPG pricing formula ported to JavaScript
 - pure JavaScript, no native binaries, running natively in IBM i PASE
 
-To see what files Bob generated, click 'Show all' on the 'File Changed' item at the Bottom of the Bob Chat Panel.
+1. To see what files Bob generated, click 'Show all' on the 'File Changed' item at the Bottom of the Bob Chat Panel.
 
-Start the app from your IBM i PASE shell:
+2. Start the app from your IBM i PASE shell, or ask Bob to start the dev server for you:
 
 ```bash
 cd /home/<your-user>/flight4nn-frontend-apps
@@ -956,9 +960,7 @@ nohup /QOpenSys/pkgs/bin/bash start-dev.sh > /tmp/vite-dev.log 2>&1 &
 cat /tmp/vite-dev.log
 ```
 
-Or ask Bob to start the dev server for you!
-
-Then open `http://localhost:30nn` in your browser.
+3. Then open `http://localhost:30nn` in your browser.
 **Note that port number, and application look & feel can differ. If your browser isn't showing anything, make sure you've completed step 2 of environment setup and it includes your port.**
 
 ### Skills & tools used behind the scenes
@@ -972,7 +974,7 @@ In addition to the sample Skill we created in step 1, we've just used a set of u
 | IFS write tools | Creates project files directly in `$HOME/flight4nn-react/` on IBM i |
 | IBM i PASE | Runs `npm install`, `npm run build`, `npm start` natively on IBM i |
 
-⚠️ Ask Bob to stop the development server when you finish exploring the React app, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
+1. ⚠️ Ask Bob to stop the development server when you finish exploring the React app, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
 
 ```text
 Stop the web service for FLGHT4nn on port 30nn
