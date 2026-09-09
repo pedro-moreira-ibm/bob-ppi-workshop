@@ -118,7 +118,7 @@ Drill down on a specific member by generating a functional business document usi
 
 3. Watch Bob create a guided workflow to get the necessary data and generate a complete report describing a business function. Bob will use subagents to create a document outlining business rules, decision logic, mermaid diagrams, process flows, etc. Documentation is written in business-friendly language, not technical jargon.
 
-4. At the end, specify an output location on the IFS **unique to your library number**. For example: /home/ITZUSER/flght400/docs/business-rules/FRS401-2026-07-16T19-34-14.md
+4. ⚠️ At the end, specify an output location on the IFS **unique to your library number**. For example: /home/ITZUSER/flght400/docs/business-rules/FRS401-2026-07-16T19-34-14.md
 
 ![IFS location](pics/IFS-location.png)
 
@@ -387,7 +387,6 @@ I approve the display-file change. Save FRS021DF, but do not compile it yet.
 | Save | Yes, save `FRS021DF` |
 | Compile | No |
 
-4. Proceed when Bob confirms that the source was saved and shows the updated preview.
 
 ### 3.5. Update the RPG program
 
@@ -439,7 +438,6 @@ I approve the FRS021 changes. Save the source member, but do not compile it yet.
 | Save | Yes, save `FRS021` |
 | Compile | No |
 
-4. Proceed when Bob confirms that the updated source was saved and read back successfully.
 
 ### 3.6. Build the direct demo path
 
@@ -502,9 +500,7 @@ Explain the direct cause of this compile error and propose the smallest correcti
 | Save | Only if an error requires a reviewed correction |
 | Compile | Yes, only `FLIGHTS`, `FLIGHTSZ`, `FRS021DF`, and `FRS021` |
 
-5. Proceed when all four objects compile successfully, or Bob stops at the first failure and reports it.
-
-6. ⚠️ **Note:** If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the Bobathon or leave it as an item at the end.
+5. ⚠️ **Note:** If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the workshop or leave it as an item at the end.
 
 ### 3.7. Validate the result
 
@@ -538,11 +534,10 @@ Screen:    FRS021DF.SFLHRS
 | Save | No |
 | Compile | No |
 
-2. Proceed when Bob confirms the database, logical-file, RPG, and screen definitions.
 
 ### 3.8. Look at the resulting changes
 
-1. Repeat step 3.1. You should now see the new Flight Hours field on the flight schedule screen!
+1. Repeat step [3.1.](###-3.1.-Explore-the-flight-maintenance-screen). You should now see the new Flight Hours field on the flight schedule screen!
 
 ![newfield](pics/newfield.png)
 
