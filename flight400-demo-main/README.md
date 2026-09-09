@@ -550,7 +550,7 @@ Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. Those dependen
 
 &nbsp;
 
-✅ **Exercise 3 complete** — Bob explored the existing screen, traced the Mileage implementation, performed a focused impact analysis, updated the DDS and RPG sources, compiled the direct Flight Maintenance path, and validated the result. Total Flight Hours now flows end-to-end: `FLIGHTS.FLHRS` → `FLIGHTSZ.FHRS` → `FRS021` → `FRS021DF.SFLHRS`.
+✅ **Exercise 3 completed** — You've added Total Flight Hours across the database, RPG program, and screen — from impact analysis and source changes to compilation and validation — with Bob's help!
 
 ---
 
