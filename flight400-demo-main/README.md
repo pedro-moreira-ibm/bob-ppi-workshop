@@ -124,7 +124,7 @@ When prompted, use the following selections:
 
 &nbsp;
 
-✅ You've explored the legacy IBM i application, generated an architecture overview and ERD, and extracted business rules from an RPG program
+✅ **Exercise 1 completed** - You've explored the legacy IBM i application, generated an architecture overview and ERD, and extracted business rules from an RPG program.
 
 ---
 
@@ -184,7 +184,7 @@ Using the generated information, create a file named 'FRS409-Modernization-Repor
 
 &nbsp;
 
-✅ You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
+✅ **Exercise 2 completed** - You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
 
 ---
 
@@ -550,7 +550,7 @@ Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. Those dependen
 
 &nbsp;
 
-✅ **Exercise 3 completed** — You've added Total Flight Hours across the database, RPG program, and screen — from impact analysis and source changes to compilation and validation — with Bob's help!
+✅ **Exercise 3 completed** - You've added Total Flight Hours across the database, RPG program, and screen — from impact analysis and source changes to compilation and validation — with Bob's help!
 
 ---
 
@@ -727,7 +727,7 @@ Apply the highest-priority index only for FLGHT4nn
 
 &nbsp;
 
-✅ You've reviewed, corrected, analyzed, and optimized a Db2 for i SQL statement using Bob's guided Index Advisor workflow — without needing deep expertise in query optimization, Visual Explain, or Index Advisor internals.
+✅ **Exercise 4 completed** - You've reviewed, corrected, analyzed, and optimized a Db2 for i SQL statement using Bob's guided Index Advisor workflow — without needing deep expertise in query optimization, Visual Explain, or Index Advisor internals.
 
 ---
 
@@ -763,7 +763,7 @@ Bob will query `QSYS2.OBJECT_STATISTICS` filtering on object type `*PGM` in `FLG
 
 &nbsp;
 
-✅ You've used Bob to inspect active jobs and CPU usage, optionally investigated a job in more detail, and identified programs to review for modernization.
+✅ **Exercise 5 completed** - You've used Bob to inspect active jobs and CPU usage, optionally investigated a job in more detail, and identified programs to review for modernization.
 
 ---
 
@@ -861,7 +861,7 @@ Bob will generate the test source members, run the suites, and iterate until the
 
 &nbsp;
 
-✅ You've used Bob's guided workflows to go from untested legacy RPG to a structured, executed RPGUnit test suite — without writing test boilerplate by hand.
+✅ **Exercise 6 completed** - You've used Bob's guided workflows to go from untested legacy RPG to a structured, executed RPGUnit test suite — without writing test boilerplate by hand.
 
 ---
 
@@ -983,7 +983,7 @@ Stop the web service for FLGHT4nn on port 30nn
 
 &nbsp;
 
-✅ You've created a helper skill, generated and launched a React Carbon app from the FLIGHT400 green screen, and stopped its development server after exploring the result.
+✅ **Optional exercise completed** - You've created a helper skill, generated and launched a React Carbon app from the FLIGHT400 green screen, and stopped its development server after exploring the result.
 
 ---
 
