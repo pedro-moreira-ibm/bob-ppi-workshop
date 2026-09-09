@@ -558,7 +558,7 @@ Screen:    FRS021DF.SFLHRS
 
 ## Exercise 4 — Database optimization
 
-In this exercise, you will review a complex SQL query written by a junior developer, validate it, and apply Bob's index advisor to improve performance. This exercise takes about 15 minutes to complete.
+In this exercise, you will review a complex SQL query written by a junior developer, validate it, and apply Bob's index advisor to improve performance.
 
 ### 4.1. Switch to IBM i Database mode
 
@@ -566,14 +566,7 @@ In this exercise, you will review a complex SQL query written by a junior develo
 
 ### 4.2. Review the query with Bob
 
-A junior developer wrote the following query to summarize flight bookings per flight per agent.
-
-1. Type `/review` first to ensure Bob recognizes the command, then paste the query in the next step so `/review` is highlighted:
-
-![review slash 1](pics/slash-review-1.jpeg)
-![review slash 2](pics/slash-review-2.jpeg)
-
-2. ⚠️ Ask Bob to review the following SQL query using `/review`, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+Imagine the scenario where a junior developer wrote the following query to summarize flight bookings per flight per agent.
 
 ```sql
 -- ============================================================
@@ -632,6 +625,12 @@ ORDER BY
 
 FETCH FIRST 100 ROWS ONLY;
 ```
+
+
+2. ⚠️ Ask Bob to review the following SQL query using the comand `/review`, and replacing `nn` in the query with the two-digit suffix of your assigned library, (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`), before pasting it into Bob.
+
+![review slash 1](pics/slash-review-1.jpeg)
+![review slash 2](pics/slash-review-2.jpeg)
 
 Bob may inspect the connected IBM i catalog to verify names and data types. Exact results may vary, but expect findings such as:
 
