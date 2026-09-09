@@ -501,7 +501,8 @@ Explain the direct cause of this compile error and propose the smallest correcti
 | Compile | Yes, only `FLIGHTS`, `FLIGHTSZ`, `FRS021DF`, and `FRS021` |
 
   <pre>
-  If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the workshop or leave it as an item at the end.
+  If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. 
+  Do not update or compile it during the workshop or leave it as an item at the end.
   </pre>
 
 
@@ -541,14 +542,15 @@ Screen:    FRS021DF.SFLHRS
 
 ### 3.8. Look at the resulting changes
 
-1. Repeat [step 3.1.](#31-explore-the-flight-maintenance-screen).
-
-You should now see the new Flight Hours field on the flight schedule screen!
+1. Repeat [step 3.1.](#31-explore-the-flight-maintenance-screen) You should now see the new Flight Hours field on the flight schedule screen!
 
 ![newfield](pics/newfield.png)
 
-Note: Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. Those dependencies are valuable impact-analysis findings, but they are outside the scope of the exercise. In a production change, those programs would be reviewed and recompiled separately.
-
+<pre>
+  Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. 
+  Those dependencies are valuable impact-analysis findings, but they are outside the scope of the exercise. 
+  In a production change, those programs would be reviewed and recompiled separately.
+<\pre>
 &nbsp;
 
 ✅ **Exercise 3 completed** - You've added Total Flight Hours across the database, RPG program, and screen — from impact analysis and source changes to compilation and validation — with Bob's help!
