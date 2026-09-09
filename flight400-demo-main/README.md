@@ -21,7 +21,7 @@
 
 ⚠️ The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list.
 
-1. ⚠️ Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs.
+⚠️ Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs.
 
 | Student # | Library | Dev Port | React App URL |
 |:---------:|---------|:--------:|---------------|
@@ -38,7 +38,7 @@
 2. Click **New Connection** and enter the following data:
 
    - Host IP:
-   - User profile: ITZUSER
+   - User profile: ```ITZUSER ```
    - Private key found [here](ssh_private_key.pem).
 
 ![i connection](pics/i-connection.png)
