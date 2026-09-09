@@ -103,14 +103,12 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 
 &nbsp;
 
-### 1.5. *(Optional)* Generate Business Rules Extraction (5 minutes)
+### 1.5. Generate Business Rules Extraction
 Drill down on a specific member by generating a functional business document using the Business Rules Extraction workflow.
 
 1. Click the workflow icon at the top of the Bob panel, choose to run workflow in library list, and select **Business Rules Extraction**
 
 ![workflows icon](pics/workflows-icon.png)
-
-**Workflow Configuration**
 
 When prompted, use the following selections:
 
