@@ -74,7 +74,9 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
 3. Click the **`+` (Scope) button** and select **(QSYS) Library List** as the context scope. This gives Bob visibility into the full application structure. Again, make sure that `FLGHT4nn` is in the library list. Bob will first search in this list before searching in all QSYS.
-4. ⚠️ Type the following prompt after replacing the nn with your library number (e.g. FLGHT401, FLGHT402...):
+4. Enter the following prompt.
+
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
@@ -86,6 +88,8 @@ Generate a comprehensive architecture overview of the FLIGHT4nn application in Q
 
 1. In the Bob chat panel, switch to **IBM i Database** mode using the mode selector.
 2. Type the following slash command so that `/erd` is highlighted in the Bob chat:
+
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 /erd FLGHT4nn
@@ -211,7 +215,8 @@ For this demonstration, Bob should update only the direct Flight Maintenance pat
 ### 3.1. Explore the flight maintenance screen
 
 Begin with the part of the application visible to the user.
-⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.
@@ -245,7 +250,7 @@ The new business requirement is to add *Total Flight Hours* to the Flight Mainte
 
 The database and screen fields use different names because this application uses an `S` prefix for screen fields.
 
-1. ⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
@@ -290,7 +295,7 @@ Bob may identify additional affected programs such as programs that use `FLIGHTS
 
 Ask Bob to prepare the database DDS changes:
 
-⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update the DDS source for the direct database path:
@@ -347,7 +352,7 @@ I approve these two DDS source changes. Save both source members, but do not com
 
 ### 3.4. Add the screen field
 
-⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.
@@ -391,6 +396,8 @@ Proceed when Bob confirms that the source was saved and shows the updated previe
 ### 3.5. Update the RPG program
 
 Ask Bob:
+
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QRPGSRC(FRS021) to handle Total Flight Hours using the existing Mileage implementation as the pattern.
@@ -443,6 +450,8 @@ Proceed when Bob confirms that the updated source was saved and read back succes
 ### 3.6. Build the direct demo path
 
 Compile only the objects required for the Flight Maintenance demonstration. Ask Bob:
+
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Build only the direct Flight Maintenance path in this order:
@@ -509,6 +518,8 @@ Proceed when all four objects compile successfully, or Bob stops at the first fa
 
 Ask Bob:
 
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+
 ```text
 Validate the completed Total Flight Hours change for the direct Flight Maintenance path.
 Confirm: FLHRS exists in FLGHT4nn/FLIGHTS; FHRS is available through FLGHT4nn/FLIGHTSZ; SFLHRS appears immediately after Mileage in the FRS021DF DDS Previewer; FRS021 compiled successfully; the display file does not contain the invalid COLHDG keyword.
@@ -545,13 +556,13 @@ Repeat step 3.1. You should now see the new Flight Hours field on the flight sch
 
 ![newfield](pics/newfield.png)
 
-&nbsp;
-
-✅ **Exercise 3 complete** — Bob explored the existing screen, traced the Mileage implementation, performed a focused impact analysis, updated the DDS and RPG sources, compiled the direct Flight Maintenance path, and validated the result. Total Flight Hours now flows end-to-end: `FLIGHTS.FLHRS` → `FLIGHTSZ.FHRS` → `FRS021` → `FRS021DF.SFLHRS`.
-
 **Follow-up work**
 
 Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. Those dependencies are valuable impact-analysis findings, but they are outside the scope of the exercise. In a production change, those programs would be reviewed and recompiled separately.
+
+&nbsp;
+
+✅ **Exercise 3 complete** — Bob explored the existing screen, traced the Mileage implementation, performed a focused impact analysis, updated the DDS and RPG sources, compiled the direct Flight Maintenance path, and validated the result. Total Flight Hours now flows end-to-end: `FLIGHTS.FLHRS` → `FLIGHTSZ.FHRS` → `FRS021` → `FRS021DF.SFLHRS`.
 
 ---
 
@@ -565,12 +576,14 @@ In the Bob chat panel, use the mode selector to switch to **IBM i Database** mod
 
 ### 4.2. Review the query with Bob
 
-A junior developer wrote the following query to summarize flight bookings per flight per agent. Change FLGHT4nn to your number and then paste it into the Bob chat using the `/review` slash command:
+A junior developer wrote the following query to summarize flight bookings per flight per agent. Paste it into the Bob chat using the `/review` slash command:
 
 **Note: Make sure to type `/review` first to ensure Bob recognizes the command, then paste the rest so `/review` is highlighted:**
 
 ![review slash 1](pics/slash-review-1.jpeg)
 ![review slash 2](pics/slash-review-2.jpeg)
+
+⚠️ Before copying the following SQL query, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```sql
 -- ============================================================
@@ -720,6 +733,8 @@ For this lab, review and create the highest-priority recommendation for your ass
 
 After Bob has given the suggested indexes, ask:
 
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+
 ```text
 Apply the highest-priority index only for FLGHT4nn
 ```
@@ -752,11 +767,17 @@ Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table fun
 
 **Prompt 3:**
 
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+
 ```text
 Which programs in the FLGHT4nn library have not been recompiled in the last 5 years?
 ```
 
 Bob will query `QSYS2.OBJECT_STATISTICS` filtering on object type `*PGM` in `FLGHT4nn`, compare the `LAST_USED_TIMESTAMP` or `OBJCREATED` attributes, and list the stale programs — perfect input for a modernization backlog.
+
+&nbsp;
+
+✅ You've used Bob to inspect active jobs and CPU usage, optionally investigated a job in more detail, and identified programs to review for modernization.
 
 ---
 
@@ -917,7 +938,7 @@ Bob creates a new Skill that improves its awareness of PASE-specific details for
 
 - Switch to IBM i Developer mode, then Click on the `+` button (top right) and select  the `FLGHT4nn` (library list) as a context of for the task. **Update the FLGHT4nn's with your library number**, paste this [screenshot](./pics/flight400.png) in the prompt, and ask:
 
-**📝 Note:** Replace `nn` in `FLGHT4nn` with your team number (e.g. `FLGHT401`, `FLGHT402`…). Replace also `port 30nn` by the relevant dev port assigned to your library (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`, ... .
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
 
 ```text
 Given this screenshot of the 5250 flight order screen from the Application Flight4nn in @FLGHT4nn, Build a single-page React 18 + Vite 4 app on IBM i (PASE) using @carbon/react ^1.x with dark theme that modernizes the IBM i 5250 screen shown in the attached screenshot. Create the app in the IFS at $HOME/flight4nn-frontend-apps/screen-name/. Use the g100 dark theme. All fields should have a list of values to select from. Pin the Vite dev server to port 30nn if available. Launch the server, and give the final URL.
@@ -968,11 +989,17 @@ In addition to the sample Skill we created in step 1, we've just used a set of u
 
 Once you finish playing around with the react app. Ask Bob:
 
+⚠️ Before copying the following prompt, replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
+
 ```text
 Stop the web service for FLGHT4nn on port 30nn
 ```
 
 ⚠️ This app runs with sample data only. The natural next step is to add a REST / Web Services layer connecting the React front end to the real IBM i business logic and Db2 for i database.
+
+&nbsp;
+
+✅ You've created a helper skill, generated and launched a React Carbon app from the FLIGHT400 green screen, and stopped its development server after exploring the result.
 
 ---
 
