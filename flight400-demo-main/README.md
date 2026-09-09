@@ -736,15 +736,15 @@ Apply the highest-priority index only for FLGHT4nn
 
 In this exercise, you will use Bob in IBM i Developer mode to answer system-level questions using two natural language prompts. This exercise takes about 10 minutes to complete.
 
-1. Switch back to **IBM i Developer** mode and try these prompts:
+Switch back to **IBM i Developer** mode.
 
-2. Enter **Prompt 1:**
+Ask Bob which active jobs have accumulated the most CPU time:
 
 ```text
 Which active jobs have accumulated the most CPU time? For the top jobs, distinguish cumulative CPU time from their current elapsed CPU percentage.
 ```
 
-3. Enter **Prompt 2 (optional):**
+Optionally, ask Bob to investigate the top-ranked job in more detail:
 
 ```text
 Inspect the job ranked first and determine whether it is currently CPU-bound. Check its job log and take one fresh elapsed CPU measurement. If the log is empty and the job is a PASE process, inspect its IFS job information for its executable, working directory, and open application or log files. Stop after that investigation. Distinguish facts from inferences and provide no more than two recommendations
@@ -752,9 +752,9 @@ Inspect the job ranked first and determine whether it is currently CPU-bound. Ch
 
 Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table function and return a summary of active jobs with CPU utilization — giving you an instant health check on your LPAR, then use other tools to read the logs and other information, and create a first report. You might see the Node.js job running if you completed the optional React exercise and never stopped the web server.
 
-4. Enter **Prompt 3:**
+Now ask Bob which programs have not been recompiled in the last five years:
 
-   ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Which programs in the FLGHT4nn library have not been recompiled in the last 5 years?
