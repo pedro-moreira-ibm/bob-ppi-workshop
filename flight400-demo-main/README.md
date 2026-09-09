@@ -502,8 +502,7 @@ Explain the direct cause of this compile error and propose the smallest correcti
 
   <pre>
   If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. 
-  Do not update or compile it during the workshop or leave it as an item at the end.
-  </pre>
+  Do not update or compile it during the workshop or leave it as an item at the end. </pre>
 
 
 ### 3.7. Validate the result
