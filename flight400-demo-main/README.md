@@ -41,13 +41,13 @@ Throughout the labs, participants must only use **their assigned number** so eve
 - User profile: ITZUSER
 - Private key found [here](ssh_private_key.pem).
 
-[i connection](pics/i-connection.png)
+![i connection](pics/i-connection.png)
 
 3. In the Code for IBM i object browser, browse library FLGHT4nn where you replace nn with your library number given to you by the instructor (ex: FLGHT400, FLGHT401, etc.) — this contains the original source members (RPG, CL, DDS, SQL) for reference.
 
 4. Then, add your library to the user library list.
 
-[add library](pics/add-library.png)
+![add library](pics/add-library.png)
 
 That's all for now! You will explore the codebase more in Exercise 2. 
 ---
