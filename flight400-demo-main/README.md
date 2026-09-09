@@ -548,8 +548,8 @@ Screen:    FRS021DF.SFLHRS
 <pre>
   Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. 
   Those dependencies are valuable impact-analysis findings, but they are outside the scope of the exercise. 
-  In a production change, those programs would be reviewed and recompiled separately.
-<\pre>
+  In a production change, those programs would be reviewed and recompiled separately. </pre>
+  
 &nbsp;
 
 ✅ **Exercise 3 completed** - You've added Total Flight Hours across the database, RPG program, and screen — from impact analysis and source changes to compilation and validation — with Bob's help!
