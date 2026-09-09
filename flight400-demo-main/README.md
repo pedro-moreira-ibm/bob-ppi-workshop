@@ -212,7 +212,8 @@ For this demonstration, Bob should update only the direct Flight Maintenance pat
 
 ### 3.1. Explore the Flight Maintenance Screen
 
-Begin with the part of the application visible to the user. In the Bob chat panel, enter:
+Begin with the part of the application visible to the user. 
+⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
 "Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.
@@ -247,7 +248,7 @@ The new business requirement is to add *Total Flight Hours* to the Flight Mainte
 
 The database and screen fields use different names because this application uses an `S` prefix for screen fields.
 
-⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+1. ⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
 Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
@@ -285,6 +286,7 @@ Bob may identify additional affected programs such as programs that use `FLIGHTS
 | Save | No |
 | Compile | No |
 
+&nbsp;
 
 ### 3.3. Add the Database and Logical-File Fields
 
@@ -327,7 +329,7 @@ FHRS                      RENAME(FLHRS)
 - Existing keys and fields were not changed.
 - `FLIGHTSZ` retains its existing record-format and key definitions.
 
-If the changes are correct, tell Bob:
+1. If the changes are correct, tell Bob:
 
 ```text
 "I approve these two DDS source changes. Save both source members, but do not compile them yet."*
@@ -341,10 +343,11 @@ If the changes are correct, tell Bob:
 | Save | Yes, save `FLIGHTS` and `FLIGHTSZ`|
 | Compile | No |
 ---
+&nbsp;
 
 ### 3.4. Add the Screen Field
 
-Ask Bob:
+⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
 "Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.
