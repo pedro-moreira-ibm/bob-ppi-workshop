@@ -74,9 +74,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
 3. Click the **`+` (Scope) button** and select **(QSYS) Library List** as the context scope. This gives Bob visibility into the full application structure. Again, make sure that `FLGHT4nn` is in the library list. Bob will first search in this list before searching in all QSYS.
-4. Enter the following prompt.
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+4. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
@@ -87,9 +85,7 @@ Generate a comprehensive architecture overview of the FLIGHT4nn application in Q
 ### 1.3. Generate an entity relationship diagram (database mode)
 
 1. In the Bob chat panel, switch to **IBM i Database** mode using the mode selector.
-2. Type the following slash command so that `/erd` is highlighted in the Bob chat:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+2. ⚠️ Ask Bob using the `/erd` slash command (make sure it is highlighted in the chat), replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 /erd FLGHT4nn
@@ -216,7 +212,7 @@ For this demonstration, Bob should update only the direct Flight Maintenance pat
 
 Begin with the part of the application visible to the user.
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.
@@ -250,7 +246,7 @@ The new business requirement is to add *Total Flight Hours* to the Flight Mainte
 
 The database and screen fields use different names because this application uses an `S` prefix for screen fields.
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
@@ -293,9 +289,7 @@ Bob may identify additional affected programs such as programs that use `FLIGHTS
 
 ### 3.3. Add the database and logical-file fields
 
-Ask Bob to prepare the database DDS changes:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob to prepare the database DDS changes using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update the DDS source for the direct database path:
@@ -352,7 +346,7 @@ I approve these two DDS source changes. Save both source members, but do not com
 
 ### 3.4. Add the screen field
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.
@@ -395,9 +389,7 @@ Proceed when Bob confirms that the source was saved and shows the updated previe
 
 ### 3.5. Update the RPG program
 
-Ask Bob:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Update FLGHT4nn/QRPGSRC(FRS021) to handle Total Flight Hours using the existing Mileage implementation as the pattern.
@@ -449,9 +441,7 @@ Proceed when Bob confirms that the updated source was saved and read back succes
 
 ### 3.6. Build the direct demo path
 
-Compile only the objects required for the Flight Maintenance demonstration. Ask Bob:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob to compile only the direct Flight Maintenance path using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Build only the direct Flight Maintenance path in this order:
@@ -516,9 +506,7 @@ Proceed when all four objects compile successfully, or Bob stops at the first fa
 
 ### 3.7. Validate the result
 
-Ask Bob:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Validate the completed Total Flight Hours change for the direct Flight Maintenance path.
@@ -583,7 +571,7 @@ A junior developer wrote the following query to summarize flight bookings per fl
 ![review slash 1](pics/slash-review-1.jpeg)
 ![review slash 2](pics/slash-review-2.jpeg)
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob to review the following SQL query using `/review`, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```sql
 -- ============================================================
@@ -731,9 +719,7 @@ CREATE INDEX FLGHT4nn.ORDERS_IDX_AGT_DEP
 
 For this lab, review and create the highest-priority recommendation for your assigned schema — typically the index starting with `(DEPARTURE_DATE, FLIGHT_NUMBER)`. This index directly supports the query's selective date-range predicate and is generally the most impactful recommendation.
 
-After Bob has given the suggested indexes, ask:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob to apply the recommended index using the following prompt, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Apply the highest-priority index only for FLGHT4nn
@@ -767,7 +753,7 @@ Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table fun
 
 **Prompt 3:**
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Which programs in the FLGHT4nn library have not been recompiled in the last 5 years?
@@ -936,9 +922,9 @@ Bob creates a new Skill that improves its awareness of PASE-specific details for
 
 ### Prompt in Bob chat UI
 
-- Switch to IBM i Developer mode, then Click on the `+` button (top right) and select  the `FLGHT4nn` (library list) as a context of for the task. **Update the FLGHT4nn's with your library number**, paste this [screenshot](./pics/flight400.png) in the prompt, and ask:
+- Switch to IBM i Developer mode, then Click on the `+` button (top right) and select  the `FLGHT4nn` (library list) as a context of for the task. Paste this [screenshot](./pics/flight400.png) alongside the following prompt:
 
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
+⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
 
 ```text
 Given this screenshot of the 5250 flight order screen from the Application Flight4nn in @FLGHT4nn, Build a single-page React 18 + Vite 4 app on IBM i (PASE) using @carbon/react ^1.x with dark theme that modernizes the IBM i 5250 screen shown in the attached screenshot. Create the app in the IFS at $HOME/flight4nn-frontend-apps/screen-name/. Use the g100 dark theme. All fields should have a list of values to select from. Pin the Vite dev server to port 30nn if available. Launch the server, and give the final URL.
@@ -987,9 +973,7 @@ In addition to the sample Skill we created in step 1, we've just used a set of u
 | IFS write tools | Creates project files directly in `$HOME/flight4nn-react/` on IBM i |
 | IBM i PASE | Runs `npm install`, `npm run build`, `npm start` natively on IBM i |
 
-Once you finish playing around with the react app. Ask Bob:
-
-⚠️ Replace every `nn` placeholder with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
+⚠️ Ask Bob to stop the development server when you finish exploring the React app, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`). Also replace `30nn` with your assigned development port (e.g. `3001` for `FLGHT401`, `3002` for `FLGHT402`).
 
 ```text
 Stop the web service for FLGHT4nn on port 30nn
