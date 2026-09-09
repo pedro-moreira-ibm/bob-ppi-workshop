@@ -76,7 +76,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 4. ⚠️ Type the following prompt after replacing the nn with your library number:
 
 ```text
-   Generate a comprehensive architecture overview of the **FLIGHT4nn** application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
+   Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
 ```
 
 5. Bob will analyze the programs, source members, and database files and return a structured Markdown document. Review the output — notice how it identifies the menu-driven architecture, the core transaction programs, and the underlying database schema.
@@ -87,7 +87,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 2. Type the following slash command so that `/erd` is highlighted in the Bob chat:
 
 ```text
-   `/erd FLGHT4nn`
+   /erd FLGHT4nn
 ```
 
 3. Bob will introspect the physical files (`FLIGHTS`, `ORDERS`, `CUSTOMERS`, `AGENTS`, etc.) and their logical files, then generate a **Mermaid ERD** showing the relationships between entities.
