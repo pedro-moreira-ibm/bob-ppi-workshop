@@ -38,8 +38,8 @@ Throughout the labs, participants must only use **their assigned number** so eve
 1. In Bob IDE, open the IBM i panel (left sidebar).
 2. Click **New Connection** and enter the following data:
 - Host IP: 
-- User profile:
-- Private key found [here]().
+- User profile: ITZUSER
+- Private key found [here](ssh_private-key.pem).
 - Establish the connection to your IBM i this is a standard connection to your IBM i.
 ![i connection](pics/i-connection.png)
 3. In the Code for IBM i object browser, browse library FLGHT4nn where you replace nn with your library number given to you by the instructor (ex: FLGHT400, FLGHT401, etc.) — this contains the original source members (RPG, CL, DDS, SQL) for reference.
