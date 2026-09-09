@@ -20,9 +20,9 @@
 
 ### 2. Keep track of your assigned library number
 
-The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list. 
+⚠️ The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list. 
 
-Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs. 
+⚠️ Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs. 
 
 | Student # | Library | Dev Port | React App URL |
 |:---------:|---------|:--------:|---------------|
@@ -49,7 +49,9 @@ Throughout the labs, participants must only use **their assigned number** so eve
 
 ![add library](pics/add-library.png)
 
-All set! You are now ready to start the exercises.
+&nbsp;
+
+✅ All set! You are now ready to start the exercises.
 
 ---
 
@@ -125,6 +127,7 @@ When prompted, use the following selections:
 ![IFS location](pics/IFS-location.png)
 
 &nbsp;
+
 ✅ You've explored the legacy IBM i application, generated an architecture overview and ERD, and extracted business rules from an RPG program
 
 ---
