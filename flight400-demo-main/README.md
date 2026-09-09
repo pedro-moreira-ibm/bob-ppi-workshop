@@ -189,7 +189,7 @@ Using the generated information, create a file named 'FRS409-Modernization-Repor
 
 ## Exercise 3 — Field Expansion: Add Total Flight Hours
 
-**Goal:** Use Bob to explore the Flight Maintenance application and add a new business field — *Total Flight Hours* — across its DDS and RPG components. The completed field will use the following names:
+In this exercise, you will use Bob to explore the Flight Maintenance application and add a new business field — *Total Flight Hours* — across its DDS and RPG components. The completed field will be a four-digit whole number (type: Numeric, digits: 4, decimal places: 0, valid range: 0–9999) and it will use the following names:
 
 | Layer | Field Name |
 |---|---|
@@ -197,9 +197,8 @@ Using the generated information, create a file named 'FRS409-Modernization-Repor
 | Logical / RPG | `FHRS` |
 | Screen | `SFLHRS` |
 
-The field will be a four-digit whole number (type: Numeric, digits: 4, decimal places: 0, valid range: 0–9999).
 
-This is a demonstration in the disposable `FLGHT4nn` lab environment. The objective is to show Bob exploring legacy IBM i code, performing an impact analysis, making coordinated source changes, compiling the direct application path, and validating the result. This exercise takes about 30 minutes to complete.
+The objective is to show Bob exploring legacy IBM i code, performing an impact analysis, making coordinated source changes, compiling the direct application path, and validating the result.
 
 **Before You Begin**
 
