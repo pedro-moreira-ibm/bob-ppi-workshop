@@ -304,8 +304,10 @@ Show the proposed diffs. Do not save or compile anything until I review them.
 
 The physical-file DDS should add:
 
->  * FLHRS       4P 0 *
->  *             COLHDG('FLIGHT_HOURS')*
+```
+FLHRS          4P 0
+               COLHDG('FLIGHT_HOURS')
+```
 
 
 The exact spacing must follow the fixed-column format of the existing DDS member. The `FLIGHTSZ` logical file should add:
