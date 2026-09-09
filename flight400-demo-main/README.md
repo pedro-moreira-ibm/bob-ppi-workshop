@@ -278,7 +278,6 @@ The minimum source members for the direct demonstration should be:
 Bob may identify additional affected programs such as programs that use `FLIGHTS` or `FLIGHTSZ`. Those should be recorded as follow-up items but not changed during this demonstration.
 
 &nbsp;
-
 **After the prompt**
 
 | Attribute | Value |
