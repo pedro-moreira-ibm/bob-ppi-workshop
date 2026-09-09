@@ -38,7 +38,7 @@
 2. Click **New Connection** and enter the following data:
 
    - Host IP:
-   - User profile: ```ITZUSER ```
+   - User profile: `ITZUSER`
    - Private key found [here](ssh_private_key.pem).
 
 ![i connection](pics/i-connection.png)
