@@ -537,7 +537,7 @@ Screen:    FRS021DF.SFLHRS
 
 ### 3.8. Look at the resulting changes
 
-1. Repeat step [3.1.](###-3.1.-Explore-the-flight-maintenance-screen). You should now see the new Flight Hours field on the flight schedule screen!
+1. Repeat [step 3.1.](#31-explore-the-flight-maintenance-screen). You should now see the new Flight Hours field on the flight schedule screen!
 
 ![newfield](pics/newfield.png)
 
