@@ -357,7 +357,7 @@ Show the proposed diff and updated DDS preview. Do not save or compile anything 
 
 &nbsp;
 
-**Review the diff and preview** — confirm that:
+**Review the differences** and confirm that:
 
 - The screen field is named `SFLHRS`.
 - It is four digits with zero decimal positions.
@@ -411,7 +411,7 @@ Do not modify any other programs during this demonstration. Show the proposed di
 
 &nbsp;
 
-**Review the diff** — confirm that:
+**Review the differences** and confirm that:
 
 - Only `FRS021` is being changed.
 - The record length and field positions are correct.
@@ -452,6 +452,20 @@ Use the correct IBM i command for each source type. Stop if one of these four ob
 ```
 
 Bob should use commands appropriate to the discovered source types. The likely commands include:
+
+Bob should use commands appropriate to the discovered source types. The likely commands include:
+
+> **CHGPF**
+>
+> `CHGPF FILE(FLGHT4nn/FLIGHTS)`  
+> `SRCFILE(FLGHT4nn/QDDSSRCF)`  
+> `SRCMBR(FLIGHTS)`
+
+> **CRTLF**
+>
+> `CRTLF FILE(FLGHT4nn/FLIGHTSZ)`  
+> `SRCFILE(FLGHT4nn/QDDSSRCF)`  
+> `SRCMBR(FLIGHTSZ)`
 
 ```
 CHGPF FILE(FLGHT4nn/FLIGHTS)
