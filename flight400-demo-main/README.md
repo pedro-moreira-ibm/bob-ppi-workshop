@@ -90,30 +90,12 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
    /erd FLGHT4nn
 ```
 
-3. Bob will introspect the physical files (`FLIGHTS`, `ORDERS`, `CUSTOMERS`, `AGENTS`, etc.) and their logical files, then generate a **Mermaid ERD** showing the relationships between entities.
-4. Observe the key relationships:
+3. Bob will introspect the physical files (`FLIGHTS`, `ORDERS`, `CUSTOMERS`, `AGENTS`, etc.) and their logical files, then generate a **Mermaid-style Entity Relationship Diagram (ERD)** showing the relationships between entities.
+4. Analyze the results and observe the key relationships:
    - `ORDERS` links to `FLIGHTS`, `CUSTOMERS`, and `AGENTS`
    - `FLIGHTS` references `FRCITY` and `TOCITY` for departure/arrival cities
-5. Copy the ERD Markdown to your `FLIGHT4nn-Architecture.md` file.
 
-> ✅ You now have a living architecture document generated entirely from the legacy codebase — no manual reverse-engineering required!
-
-### 1.4. *(Optional)* Generate a Draw.io Architecture Diagram
-
-> **Prerequisite:** Install the **Draw.io Integration** extension in Bob IDE (`Cmd+Shift+X` → search *"Draw.io Integration"* → Install).
-
-1. In the Bob chat panel (**IBM i Developer** mode), make sure the scope is set to **Library List (QSYS)**.
-2. Type:
-
-```text
-  "Analyze the FLIGHT4nn application from the library list and generate a draw.io architecture diagram showing the main programs, menus, and database files. Save the file as `FLGHT4nn-architecture.drawio` in `$HOME/docs/` on IBM i."
-```
-
-3. Bob introspects the library list, maps the program call graph and database relationships, and writes the `.drawio` XML file to `/home/<your-user>/docs/FLGHT4nn-architecture.drawio`.
-
-4. In the **IFS Browser**, navigate to `$HOME/docs/` and click `FLGHT4nn-architecture.drawio` to open it — the Draw.io Integration extension renders the diagram directly in the editor.
-
-> ✅ You now have a visual, editable architecture diagram of the legacy application — generated in seconds.
+💡 Note: Bob can also integrate with external diagramming tools such as Draw.io, allowing you to generate richer, editable architecture diagrams from the application analysis.
 
 ![draw io](pics/drawIo.png)
 
