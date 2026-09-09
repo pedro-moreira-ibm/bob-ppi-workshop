@@ -453,19 +453,25 @@ Use the correct IBM i command for each source type. Stop if one of these four ob
 
 Bob should use commands appropriate to the discovered source types. The likely commands include:
 
+testxx:
+
 Bob should use commands appropriate to the discovered source types. The likely commands include:
 
-> **CHGPF**
->
-> `CHGPF FILE(FLGHT4nn/FLIGHTS)`  
-> `SRCFILE(FLGHT4nn/QDDSSRCF)`  
-> `SRCMBR(FLIGHTS)`
+**CHGPF**
 
-> **CRTLF**
->
-> `CRTLF FILE(FLGHT4nn/FLIGHTSZ)`  
-> `SRCFILE(FLGHT4nn/QDDSSRCF)`  
-> `SRCMBR(FLIGHTSZ)`
+<pre>
+CHGPF FILE(FLGHT4nn/FLIGHTS)
+      SRCFILE(FLGHT4nn/QDDSSRCF)
+      SRCMBR(FLIGHTS)
+</pre>
+
+**CRTLF**
+
+<pre>
+CRTLF FILE(FLGHT4nn/FLIGHTSZ)
+      SRCFILE(FLGHT4nn/QDDSSRCF)
+      SRCMBR(FLIGHTSZ)
+</pre>
 
 ```
 CHGPF FILE(FLGHT4nn/FLIGHTS)
