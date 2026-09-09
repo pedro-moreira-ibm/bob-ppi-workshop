@@ -95,7 +95,9 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
    - `ORDERS` links to `FLIGHTS`, `CUSTOMERS`, and `AGENTS`
    - `FLIGHTS` references `FRCITY` and `TOCITY` for departure/arrival cities
 
+
 💡 Note: Bob can also integrate with external diagramming tools such as Draw.io, allowing you to generate richer, editable architecture diagrams from the application analysis.
+
 
 ![draw io](pics/drawIo.png)
 
