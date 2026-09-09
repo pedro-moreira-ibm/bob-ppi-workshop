@@ -56,7 +56,7 @@ All set! You are now ready to start the exercises.
 
 In this exercise, we will use Bob's IBM i Developer mode to automatically generate an architecture overview with diagrams, then switch to Database mode to produce an Entity Relationship Diagram.
 
-### Browse the Application in the Object Browser
+### 1.1. Browse the Application in the Object Browser
 
 1. In the IBM i sidebar, expand **User Library List** and **Object Browser**.
 2. Add **FLGHT4nn** to your library list if not done, and add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
@@ -67,7 +67,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 4. Navigate to **`QDDSSRCD`** and open the display file `FRS001DF`. In the editor, Click on **Preview All** on the first line of code. It renders the green-screen layout visually — notice the classic 5250 style.
 
 
-### 1b — Generate an Architecture Explanation with Bob
+### 1.2. Generate an Architecture Explanation with Bob
 
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
