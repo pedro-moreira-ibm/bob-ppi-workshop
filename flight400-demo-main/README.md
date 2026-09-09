@@ -334,11 +334,12 @@ FHRS                      RENAME(FLHRS)
 - `FLIGHTSZ` retains its existing record-format and key definitions.
 
 1. If the changes are correct, tell Bob:
-
+&nbsp;
 ```text
-"I approve these two DDS source changes. Save both source members, but do not compile them yet."*
+I approve these two DDS source changes. Save both source members, but do not compile them yet.
 ```
 &nbsp;
+
 **After approval**
 
 | Attribute | Value |
@@ -348,7 +349,6 @@ FHRS                      RENAME(FLHRS)
 | Compile | No |
 ---
 &nbsp;
-
 ### 3.4. Add the Screen Field
 
 ⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
