@@ -60,7 +60,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 ### 1.1. Browse the Application in the Object Browser
 
 1. In the IBM i sidebar, expand **User Library List** and **Object Browser**.
-2. Add **FLGHT4nn** to your library list if not done, and add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
+2. Add **FLGHT4nn** (⚠️replace the 'nn' with your library number) to your library list if not done, and add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
    - `*PGM` — RPG and CL programs (e.g. `FRS001`, `FRS021`, `FRS409`)
    - `*FILE` — Display files and database physical/logical files
    - `*MENU` — Application menus
@@ -140,7 +140,7 @@ In this exercise, you will use Bob to understand an old OPM RPG program, and the
 3. In the Bob chat panel, type:
 
 ```text
-   "What does this program do?"
+   What does this program do?
 ```
 
 4. Bob will explain the program: `FRS409` is the **Order Modification Confirmation Window** — an OPM RPG program that displays a confirmation popup when a user modifies an order. It handles F3 (Exit), F12 (Cancel), and Enter key inputs via a `DOUEQ` loop with `CASEQ` dispatch subroutines, using a workstation data structure (`WSDS`) to capture the last key pressed.
@@ -150,7 +150,7 @@ In this exercise, you will use Bob to understand an old OPM RPG program, and the
 1. With `FRS409` still open in the editor, type in the Bob chat:
 
 ```text
-  "Can you use a workflow to modernize this program?"
+  Can you use a workflow to modernize this program?
 ```
 
 2. Bob recognizes the fixed-format OPM RPG code and offers to run the **RPG Modernization (Fixed to Free Format) workflow**.
@@ -183,6 +183,7 @@ Bob automatically generates a **Modernization Summary Report** in the Bob chat. 
 Using the generated information, create a file named 'FRS409-Modernization-Report.md' in my workspace.
 ```
 &nbsp;
+
 ✅ You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
 
 ---
