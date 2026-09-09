@@ -105,7 +105,9 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 1. In the Bob chat panel (**IBM i Developer** mode), make sure the scope is set to **Library List (QSYS)**.
 2. Type:
 
-   > *"Analyze the FLIGHT4nn application from the library list and generate a draw.io architecture diagram showing the main programs, menus, and database files. Save the file as `FLGHT4nn-architecture.drawio` in `$HOME/docs/` on IBM i."*
+```text
+  "Analyze the FLIGHT4nn application from the library list and generate a draw.io architecture diagram showing the main programs, menus, and database files. Save the file as `FLGHT4nn-architecture.drawio` in `$HOME/docs/` on IBM i."
+```
 
 3. Bob introspects the library list, maps the program call graph and database relationships, and writes the `.drawio` XML file to `/home/<your-user>/docs/FLGHT4nn-architecture.drawio`.
 
@@ -143,21 +145,25 @@ When prompted, use the following selections:
 
 **Goal:** Understand an old OPM RPG program, then modernize it to free-format ILE RPG using the Bob modernization workflow. This exercise takes about 15 minutes to complete.
 
-### 2a — Understand FRS409 (Order Modification Confirmation)
+### 2.1. Understand FRS409 (Order Modification Confirmation)
 
 1. Switch Bob back to **IBM i Developer** mode.
 2. In the Object Browser, navigate to `FLGHT4nn/QRPGSRC` and open `FRS409`.
 3. In the Bob chat panel, type:
 
-   > *"What does this program do?"*
+```text
+   "What does this program do?"
+```
 
 4. Bob will explain the program: `FRS409` is the **Order Modification Confirmation Window** — an OPM RPG program that displays a confirmation popup when a user modifies an order. It handles F3 (Exit), F12 (Cancel), and Enter key inputs via a `DOUEQ` loop with `CASEQ` dispatch subroutines, using a workstation data structure (`WSDS`) to capture the last key pressed.
 
-### 2b — Modernize FRS409 Using the RPG Modernization Workflow
+### 2.2. Modernize FRS409 Using the RPG Modernization Workflow
 
 1. With `FRS409` still open in the editor, type in the Bob chat:
 
-   > *"Can you modernize this program?"*
+```text
+  "Can you modernize this program?"
+```
 
 2. Bob recognizes the fixed-format OPM RPG code and offers to run the **RPG Modernization (Fixed to Free Format) workflow**.
    → Choose **Start workflow** to start it.
@@ -176,7 +182,7 @@ Then Bob runs the **Code for IBM i** compile action for ILE RPG, triggering a `C
 
 **Program FLGHT4nn/FRS409 was created successfully (highest severity: 00).**
 
-### 2c — Review the Modernization Summary
+### 2.2. Review the Modernization Summary
 
 Bob automatically generates a **Modernization Summary Report** in the Bob chat. It includes:
 - What was changed and why
