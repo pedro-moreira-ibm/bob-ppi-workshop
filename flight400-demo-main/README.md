@@ -67,19 +67,18 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 4. Navigate to **`QDDSSRCD`** and open the display file `FRS001DF`. In the editor, Click on **Preview All** on the first line of code. It renders the green-screen layout visually — notice the classic 5250 style.
 
 
-### 1.2. Generate an Architecture Explanation with Bob
+### 1.2. Generate an Architecture overview with Bob
 
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
 3. Click the **`+` (Scope) button** and select **(QSYS) Library List** as the context scope. This gives Bob visibility into the full application structure. Again, make sure that `FLGHT4nn` is in the library list. Bob will first search in this list before searching in all QSYS. 
-4. Type the following prompt after replacing the nn with your library number:
+4. ⚠️ Type the following prompt after replacing the nn with your library number:
 
-   > *"Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used."*
+   > *Generate a comprehensive architecture overview of the **FLIGHT4nn** application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.*
 
 5. Bob will analyze the programs, source members, and database files and return a structured Markdown document. Review the output — notice how it identifies the menu-driven architecture, the core transaction programs, and the underlying database schema.
-6. Copy the output to a new file `FLIGHT4nn-Architecture.md` in your workspace for reference.
 
-### 1c — Generate an Entity Relationship Diagram (Database Mode)
+### 1.3. Generate an Entity Relationship Diagram (Database Mode)
 
 1. In the Bob chat panel, switch to **IBM i Database** mode using the mode selector.
 2. Type the following slash command so that `/erd` is highlighted in the Bob chat:
@@ -94,7 +93,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 
 > ✅ You now have a living architecture document generated entirely from the legacy codebase — no manual reverse-engineering required!
 
-### 1d — *(Optional)* Generate a Draw.io Architecture Diagram
+### 1.4. *(Optional)* Generate a Draw.io Architecture Diagram
 
 > **Prerequisite:** Install the **Draw.io Integration** extension in Bob IDE (`Cmd+Shift+X` → search *"Draw.io Integration"* → Install).
 
@@ -111,7 +110,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 
 ![draw io](pics/drawIo.png)
 
-### 1e — *(Optional)* Generate Business Rules Extraction (5 minutes)
+### 1.5. *(Optional)* Generate Business Rules Extraction (5 minutes)
 Drill down on a specific member by generating a functional business document using the Business Rules Extraction workflow.
 
 1. Click the workflow icon at the top of the Bob panel, choose to run workflow in library list, and select **Business Rules Extraction**
