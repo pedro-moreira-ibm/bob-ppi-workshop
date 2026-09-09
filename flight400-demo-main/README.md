@@ -49,14 +49,14 @@ Throughout the labs, participants must only use **their assigned number** so eve
 
 ![add library](pics/add-library.png)
 
-That's all for now! You will explore the codebase more in Exercise 2. 
+All set! You are now ready to start the exercises.
 ---
 
 ## Exercise 1 — Code Explanation & Architecture Documentation
 
-**Goal:** Use Bob's IBM i Developer mode to automatically generate an architecture overview with diagrams, then switch to Database mode to produce an Entity Relationship Diagram. This exercise takes about 30 minutes to complete.
+In this exercise, we will use Bob's IBM i Developer mode to automatically generate an architecture overview with diagrams, then switch to Database mode to produce an Entity Relationship Diagram.
 
-### 1a — Browse the Application in the Object Browser
+### Browse the Application in the Object Browser
 
 1. In the IBM i sidebar, expand **User Library List** and **Object Browser**.
 2. Add **FLGHT4nn** to your library list if not done, and add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
@@ -66,9 +66,6 @@ That's all for now! You will explore the codebase more in Exercise 2.
 3. Expand **Source Files** and browse `QRPGSRC` — open a couple of RPG programs to get a feel for the classic fixed-format style.
 4. Navigate to **`QDDSSRCD`** and open the display file `FRS001DF`. In the editor, Click on **Preview All** on the first line of code. It renders the green-screen layout visually — notice the classic 5250 style.
 
-> 💡 Try previewing `FRS021DF` as well — this is the **Flight Maintenance** screen you will work on later in Exercise 4.
-
-> 💡 Again in the **Object Browser**, same library,  click on the program `FRS000.pgm`that is the flight reservation logon. You'll see in the `Detail` that this program was compiled in 1997, 30 years ago! 
 
 ### 1b — Generate an Architecture Explanation with Bob
 
