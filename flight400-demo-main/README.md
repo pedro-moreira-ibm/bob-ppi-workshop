@@ -124,6 +124,9 @@ When prompted, use the following selections:
 
 ![IFS location](pics/IFS-location.png)
 
+&nbsp;
+✅ You've explored the legacy IBM i application, generated an architecture overview and ERD, and extracted business rules from an RPG program
+
 ---
 
 ## Exercise 2 — Program-Level Explanation & Modernization
@@ -174,13 +177,12 @@ Bob automatically generates a **Modernization Summary Report** in the Bob chat. 
 - Opcode-by-opcode conversion notes
 - Compilation result
 
-Ask Bob to save this information into a new file in your workspace.
+1. Ask Bob to save this information into a new file in your workspace.
 
 ```text
-Using the generate information, create a file named 'FRS409-Modernization-Report.md' in my workspace.
+Using the generated information, create a file named 'FRS409-Modernization-Report.md' in my workspace.
 ```
-
-
+&nbsp;
 ✅ You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
 
 ---
