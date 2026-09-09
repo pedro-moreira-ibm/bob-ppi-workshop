@@ -73,7 +73,7 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
 3. Click the **`+` (Scope) button** and select **(QSYS) Library List** as the context scope. This gives Bob visibility into the full application structure. Again, make sure that `FLGHT4nn` is in the library list. Bob will first search in this list before searching in all QSYS. 
-4. ⚠️ Type the following prompt after replacing the nn with your library number:
+4. ⚠️ Type the following prompt after replacing the nn with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
    Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
@@ -210,13 +210,15 @@ For this demonstration, Bob should update only the direct Flight Maintenance pat
 
 ---
 
-### 3a — Explore the Flight Maintenance Screen
+### 3.1. Explore the Flight Maintenance Screen
 
 Begin with the part of the application visible to the user. In the Bob chat panel, enter:
 
-> *"Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.*
-> *Also identify: the record format used by the screen; whether each field is input, output, or input/output; the naming convention used for screen fields, including examples such as SFLGHT, SMILES, SSEATS, and SPRICE; and how visible field labels are represented in the display-file DDS.*
-> *Do not modify, save, or compile anything."*
+```text
+"Open the display file FRS021DF from FLGHT4nn/QDDSSRCD, show its current screen layout using the DDS Previewer, and list all the fields currently defined on the Flight Maintenance screen.
+Also identify: the record format used by the screen; whether each field is input, output, or input/output; the naming convention used for screen fields, including examples such as SFLGHT, SMILES, SSEATS, and SPRICE; and how visible field labels are represented in the display-file DDS.
+Do not modify, save, or compile anything."
+```
 
 Bob should preview the Flight Maintenance screen and list fields such as:
 - Flight Number, Day of the Week, From City, To City
@@ -225,11 +227,9 @@ Bob should preview the Flight Maintenance screen and list fields such as:
 
 Bob should also identify the screen-field naming pattern, including `SFLGHT`, `SMILES`, `SSEATS`, `SPRICE`.
 
-> ⚠️ **Checkpoint:** Make sure Bob previews the `SELCTR` Flight Maintenance record format rather than a message subfile or another record format in `FRS021DF`.
-
 ---
 
-### 3b — Trace the Existing Pattern and Perform an Impact Analysis
+### 3.2. Trace the Existing Pattern and Perform an Impact Analysis
 
 The new business requirement is to add *Total Flight Hours* to the Flight Maintenance application. Use these fixed requirements:
 
@@ -247,13 +247,15 @@ The new business requirement is to add *Total Flight Hours* to the Flight Mainte
 
 The database and screen fields use different names because this application uses an `S` prefix for screen fields.
 
-Ask Bob:
+⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
-> *"Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.*
-> *Use these requirements: add database field FLHRS; expose it to RPG as FHRS; display it on the screen as SFLHRS; use four numeric digits with zero decimal positions; place it immediately after Mileage on the Flight Maintenance screen.*
-> *First, trace the existing Mileage field through the application. Show how the database field in FLIGHTS is exposed through FLIGHTSZ, handled by FRS021, and displayed as SMILES in FRS021DF.*
-> *Then identify the minimum source members that must change to implement Total Flight Hours in the direct Flight Maintenance path. Confirm: whether FLIGHTS is defined by DDS; whether FLIGHTSZ explicitly lists and renames fields; how FRS021 defines the FLIGHTSZ record layout; how FRS021 maps database values to screen values; which objects must be rebuilt or recompiled.*
-> *Mention any additional affected programs as follow-up work, but do not analyze or modify those programs during this demonstration. Do not modify, save, or compile anything."*
+```text
+"Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
+Use these requirements: add database field FLHRS; expose it to RPG as FHRS; display it on the screen as SFLHRS; use four numeric digits with zero decimal positions; place it immediately after Mileage on the Flight Maintenance screen.
+First, trace the existing Mileage field through the application. Show how the database field in FLIGHTS is exposed through FLIGHTSZ, handled by FRS021, and displayed as SMILES in FRS021DF.
+Then identify the minimum source members that must change to implement Total Flight Hours in the direct Flight Maintenance path. Confirm: whether FLIGHTS is defined by DDS; whether FLIGHTSZ explicitly lists and renames fields; how FRS021 defines the FLIGHTSZ record layout; how FRS021 maps database values to screen values; which objects must be rebuilt or recompiled.
+Mention any additional affected programs as follow-up work, but do not analyze or modify those programs during this demonstration. Do not modify, save, or compile anything."
+``` 
 
 Bob should identify the existing Mileage flow and recommend the corresponding path for Total Flight Hours:
 
@@ -276,22 +278,27 @@ The minimum source members for the direct demonstration should be:
 Bob may identify additional affected programs such as programs that use `FLIGHTS` or `FLIGHTSZ`. Those should be recorded as follow-up items but not changed during this demonstration.
 
 **After the prompt**
-- Approve changes? No changes should be proposed for approval yet.
-- Save anything? No.
-- Compile anything? No.
-- Proceed when Bob has explained the existing Mileage path and identified the four direct source members.
 
----
+| Attribute | Value |
+|---|---|
+| Approve changes | No |
+| Save | No |
+| Compile | No |
 
-### 3c — Add the Database and Logical-File Fields
+
+### 3.3. Add the Database and Logical-File Fields
 
 Ask Bob to prepare the database DDS changes:
 
+⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
+
+```text
 > *"Update the DDS source for the direct database path:*
 > *In FLGHT4nn/QDDSSRCF(FLIGHTS), add FLHRS as a packed-decimal field with four digits and zero decimal positions. Add an appropriate COLHDG consistent with the existing physical-file DDS.*
 > *In FLGHT4nn/QDDSSRCF(FLIGHTSZ), add FHRS RENAME(FLHRS) so the new physical-file field is available to the RPG program.*
 > *Preserve the exact column positions of all existing DDS lines; make insert-only changes. Do not add ALWNULL, do not change the field to 5P 1, and do not use SQL ALTER TABLE.*
 > *Show the proposed diffs. Do not save or compile anything until I review them."*
+```
 
 **Expected changes**
 
@@ -326,7 +333,7 @@ If the changes are correct, tell Bob:
 
 ---
 
-### 3d — Add the Screen Field
+### 3.4. Add the Screen Field
 
 Ask Bob:
 
@@ -358,7 +365,7 @@ If it is correct, tell Bob:
 
 ---
 
-### 3e — Update the RPG Program
+### 3.5. Update the RPG Program
 
 Ask Bob:
 
@@ -396,7 +403,7 @@ If it is correct, tell Bob:
 
 ---
 
-### 3f — Build the Direct Demo Path
+### 3.6. Build the Direct Demo Path
 
 Compile only the objects required for the Flight Maintenance demonstration. Ask Bob:
 
@@ -446,7 +453,7 @@ Bob should verify the exact commands against the environment before executing th
 
 ---
 
-### 3g — Validate the Result
+### 3.7. Validate the Result
 
 Ask Bob:
 
@@ -474,7 +481,7 @@ Screen:    FRS021DF.SFLHRS
 
 ---
 
-### 3h — Look at the resulting changes
+### 3.8. Look at the resulting changes
 
 Repeat steps 3a. You should now see the new Flight Hours field on the flight schedule screen!
 
@@ -494,11 +501,11 @@ Bob may identify other programs that use `FLIGHTS` or `FLIGHTSZ`. Those dependen
 
 **Goal:** Review a complex SQL query written by a junior developer, validate it, and apply Bob's index advisor to improve performance. This exercise takes about 15 minutes to complete.
 
-### 4a — Switch to IBM i Database Mode
+### 4.1. Switch to IBM i Database Mode
 
 In the Bob chat panel, use the mode selector to switch to **IBM i Database** mode.
 
-### 4b — Review the Query with Bob
+### 4.2. Review the Query with Bob
 
 A junior developer wrote the following query to summarize flight bookings per flight per agent. Change FLGHT4nn to your number and then paste it into the Bob chat using the `/review` slash command:
 
@@ -575,7 +582,7 @@ Bob may inspect the connected IBM i catalog to verify names and data types. Exac
 - ✅ FETCH FIRST 100 ROWS ONLY is a useful testing safeguard.
 - 💡 Bob may recommend using descriptive SQL column names instead of generated IBM i system names.
 
-### 4c — *(Optional)* Explain the Performance Characteristics
+### 4.3. *(Optional)* Explain the Performance Characteristics
 
 After Bob has reviewed and corrected the query, ask:
 
@@ -591,7 +598,7 @@ Bob should identify that:
 
 ---
 
-### 4d — Run the Index Advisor Workflow
+### 4.4. Run the Index Advisor Workflow
 
 Still in **IBM i Database** mode, click the workflow icon at the top of the Bob panel, choose to run workflow in library list, and select **SQL Index Strategy Advisor**.
 
@@ -702,7 +709,7 @@ These two workflows work together in sequence:
 
 ---
 
-### 6a — Create a New Source Member `CUSTCHK`
+### 6.1. Create a New Source Member `CUSTCHK`
 
 Rather than modifying an existing program, you'll create a clean, standalone SQLRPGLE module with a single exported procedure — an ideal target for RPGUnit.
 
@@ -737,7 +744,7 @@ end-proc;
 
 This module is a clean target for the RPGUnit workflows: it's `NOMAIN`, has one exported procedure with a typed parameter and return value, contains no display file or interactive logic, and compiles naturally as a `*MODULE` or `*SRVPGM`.
 
-### 6b — Run the RPGUnit Test Plan Creation Workflow
+### 6.2. Run the RPGUnit Test Plan Creation Workflow
 
 1. Click the workflow icon at the top of the Bob panel and choose **RPGUnit Test Plan Creation** in your library list.
 
@@ -758,7 +765,7 @@ Bob will write the test plan documents and store them in the IFS directory you s
 
 > 💡 If Bob asks to run the RPGUnit Test Plan Creation workflow again at any point, select **No thanks**.
 
-### 6c — Run the RPGUnit Test Suite Implementation Workflow
+### 6.3. Run the RPGUnit Test Suite Implementation Workflow
 
 1. Click the workflow icon and choose **RPGUnit Test Suite Implementation** in your library list. Click **Proceed** since the required test plan was already created in step 6b.
 2. Select your library `FLGHT4nn`.
