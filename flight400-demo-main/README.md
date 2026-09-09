@@ -299,23 +299,26 @@ In FLGHT4nn/QDDSSRCF(FLIGHTSZ), add FHRS RENAME(FLHRS) so the new physical-file 
 Preserve the exact column positions of all existing DDS lines; make insert-only changes. Do not add ALWNULL, do not change the field to 5P 1, and do not use SQL ALTER TABLE.
 Show the proposed diffs. Do not save or compile anything until I review them.
 ```
+&nbsp;
 
 **Expected changes**
 
 The physical-file DDS should add:
 
 
+```
 FLHRS          4P 0
                COLHDG('FLIGHT_HOURS')
-
+```
 
 
 The exact spacing must follow the fixed-column format of the existing DDS member. The `FLIGHTSZ` logical file should add:
 ```
 FHRS                      RENAME(FLHRS)
 ```
+&nbsp;
 
-**Review the diffs** — confirm that:
+**Review the differences** and confirm that:
 - The PF field is named `FLHRS`.
 - The logical/RPG field is named `FHRS`.
 - The field has four digits and zero decimal positions.
@@ -326,14 +329,17 @@ FHRS                      RENAME(FLHRS)
 
 If the changes are correct, tell Bob:
 
-> *"I approve these two DDS source changes. Save both source members, but do not compile them yet."*
-
+```text
+"I approve these two DDS source changes. Save both source members, but do not compile them yet."*
+```
+&nbsp;
 **After approval**
-- Approve changes? Yes, approve the two reviewed DDS diffs.
-- Save anything? Yes, save `FLIGHTS` and `FLIGHTSZ`.
-- Compile anything? No.
-- Proceed when Bob confirms that both source members were saved and read back successfully.
 
+| Attribute | Value |
+|---|---|
+| Approve changes | Yes |
+| Save | Yes, save `FLIGHTS` and `FLIGHTSZ`|
+| Compile | No |
 ---
 
 ### 3.4. Add the Screen Field
