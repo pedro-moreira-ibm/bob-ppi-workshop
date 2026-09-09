@@ -627,7 +627,7 @@ FETCH FIRST 100 ROWS ONLY;
 ```
 
 
-2. ⚠️ Ask Bob to review the following SQL query using the comand `/review`, and replacing `nn` in the query with the two-digit suffix of your assigned library, (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`), before pasting it into Bob.
+1. ⚠️ Ask Bob to review the following SQL query using the comand `/review`, and replacing `nn` in the query with the two-digit suffix of your assigned library, (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`), before pasting it into Bob.
 
 ![review slash 1](pics/slash-review-1.jpeg)
 ![review slash 2](pics/slash-review-2.jpeg)
