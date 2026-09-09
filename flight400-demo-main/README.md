@@ -9,7 +9,7 @@
 
 ## Environment Setup 
 
-### Install the Premium Package for i / IBM i Developer Pack for VS Code and Bob IDE
+### 1. Install the Premium Package for i / IBM i Developer Pack for VS Code and Bob IDE
 
 1. Open **Bob IDE**.
 2. Go to the **Extensions** (`Cmd+Shift+X` / `Ctrl+Shift+X`).
@@ -18,7 +18,7 @@
 4. After installation, reload Bob IDE when prompted.
 5. In the **Bob** extension settings, ensure the **Premium Package for i** is activated — this unlocks the IBM i Developer and IBM i Database modes used in later exercises.
 
-### Keep track of your assigned library number
+### 2. Keep track of your assigned library number
 
 The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list. 
 
@@ -34,7 +34,7 @@ Throughout the labs, participants must only use **their assigned number** so eve
 | 50 | FLGHT450 | 3050 | http://localhost:3050 |
 
 
-### Connection to IBM i
+### 3. Connection to IBM i
 1. In Bob IDE, open the IBM i panel (left sidebar).
 2. Click **New Connection** and enter the following data:
 - Host IP: 
