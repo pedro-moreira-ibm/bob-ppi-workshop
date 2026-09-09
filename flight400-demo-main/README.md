@@ -459,24 +459,24 @@ CHGPF FILE(FLGHT4nn/FLIGHTS)
       SRCMBR(FLIGHTS)
 </pre>
 
-```
+<pre>
 CRTLF FILE(FLGHT4nn/FLIGHTSZ)
       SRCFILE(FLGHT4nn/QDDSSRCF)
       SRCMBR(FLIGHTSZ)
-```
+</pre>
 
-```
+<pre>
 CRTDSPF FILE(FLGHT4nn/FRS021DF)
         SRCFILE(FLGHT4nn/QDDSSRCD)
         SRCMBR(FRS021DF)
-```
+</pre>
 
-```
+<pre>
 CRTRPGPGM PGM(FLGHT4nn/FRS021)
           SRCFILE(FLGHT4nn/QRPGSRC)
           SRCMBR(FRS021)
           REPLACE(*YES)
-```
+</pre>
 
 Bob should verify the exact commands against the environment before executing them.
 
@@ -698,23 +698,23 @@ The workflow may:
 
 **Expected outcome** — recommendations may vary slightly depending on optimizer behavior, existing plan cache contents, and system state. Most attendees should receive recommendations similar to:
 
-```sql
+<pre>
 CREATE INDEX FLGHT4nn.ORDERS_IDX_DEPDT_FLT
     ON FLGHT4nn.ORDERS (
         DEPARTURE_DATE,
         FLIGHT_NUMBER
     );
-```
+</pre>
 
 or:
 
-```sql
+<pre>
 CREATE INDEX FLGHT4nn.ORDERS_IDX_AGT_DEP
     ON FLGHT4nn.ORDERS (
         AGENT_NO,
         DEPARTURE_DATE
     );
-```
+</pre>
 
 For this lab, review and create the highest-priority recommendation for your assigned schema — typically the index starting with `(DEPARTURE_DATE, FLIGHT_NUMBER)`. This index directly supports the query's selective date-range predicate and is generally the most impactful recommendation.
 
