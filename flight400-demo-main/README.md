@@ -250,11 +250,11 @@ The database and screen fields use different names because this application uses
 ⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
-"Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
+Perform a focused impact analysis for adding Total Flight Hours to the Flight Maintenance application in FLGHT4nn.
 Use these requirements: add database field FLHRS; expose it to RPG as FHRS; display it on the screen as SFLHRS; use four numeric digits with zero decimal positions; place it immediately after Mileage on the Flight Maintenance screen.
 First, trace the existing Mileage field through the application. Show how the database field in FLIGHTS is exposed through FLIGHTSZ, handled by FRS021, and displayed as SMILES in FRS021DF.
 Then identify the minimum source members that must change to implement Total Flight Hours in the direct Flight Maintenance path. Confirm: whether FLIGHTS is defined by DDS; whether FLIGHTSZ explicitly lists and renames fields; how FRS021 defines the FLIGHTSZ record layout; how FRS021 maps database values to screen values; which objects must be rebuilt or recompiled.
-Mention any additional affected programs as follow-up work, but do not analyze or modify those programs during this demonstration. Do not modify, save, or compile anything."
+Mention any additional affected programs as follow-up work, but do not analyze or modify those programs during this demonstration. Do not modify, save, or compile anything.
 ``` 
 
 Bob should identify the existing Mileage flow and recommend the corresponding path for Total Flight Hours:
@@ -293,20 +293,21 @@ Ask Bob to prepare the database DDS changes:
 ⚠️ Type the following prompt and replace the 'nn' in 'FLGHT4nn' with your library number (e.g. FLGHT401, FLGHT402...):
 
 ```text
-> *"Update the DDS source for the direct database path:*
-> *In FLGHT4nn/QDDSSRCF(FLIGHTS), add FLHRS as a packed-decimal field with four digits and zero decimal positions. Add an appropriate COLHDG consistent with the existing physical-file DDS.*
-> *In FLGHT4nn/QDDSSRCF(FLIGHTSZ), add FHRS RENAME(FLHRS) so the new physical-file field is available to the RPG program.*
-> *Preserve the exact column positions of all existing DDS lines; make insert-only changes. Do not add ALWNULL, do not change the field to 5P 1, and do not use SQL ALTER TABLE.*
-> *Show the proposed diffs. Do not save or compile anything until I review them."*
+Update the DDS source for the direct database path:
+In FLGHT4nn/QDDSSRCF(FLIGHTS), add FLHRS as a packed-decimal field with four digits and zero decimal positions. Add an appropriate COLHDG consistent with the existing physical-file DDS.
+In FLGHT4nn/QDDSSRCF(FLIGHTSZ), add FHRS RENAME(FLHRS) so the new physical-file field is available to the RPG program.
+Preserve the exact column positions of all existing DDS lines; make insert-only changes. Do not add ALWNULL, do not change the field to 5P 1, and do not use SQL ALTER TABLE.
+Show the proposed diffs. Do not save or compile anything until I review them.
 ```
 
 **Expected changes**
 
 The physical-file DDS should add:
-```
-FLHRS          4P 0
-               COLHDG('FLIGHT_HOURS')
-```
+
+>  * FLHRS       4P 0 *
+>  *             COLHDG('FLIGHT_HOURS')*
+
+
 The exact spacing must follow the fixed-column format of the existing DDS member. The `FLIGHTSZ` logical file should add:
 ```
 FHRS                      RENAME(FLHRS)
@@ -337,11 +338,13 @@ If the changes are correct, tell Bob:
 
 Ask Bob:
 
-> *"Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.*
-> *Requirements: four numeric digits; zero decimal positions; positioned immediately after Mileage; visible label: Flight Hours; use CHECK(RZ) to match the comparable numeric fields on this screen; preserve the existing display-file DDS style.*
-> *Do not add COLHDG — it is not valid in a display file.*
-> *Ensure that the label and field fit within the screen and do not overlap existing fields, message areas, or function-key text.*
-> *Show the proposed diff and updated DDS preview. Do not save or compile anything until I review it."*
+```text
+"Update FLGHT4nn/QDDSSRCD(FRS021DF) to add an input/output screen field named SFLHRS for Total Flight Hours.
+Requirements: four numeric digits; zero decimal positions; positioned immediately after Mileage; visible label: Flight Hours; use CHECK(RZ) to match the comparable numeric fields on this screen; preserve the existing display-file DDS style.
+Do not add COLHDG — it is not valid in a display file.
+Ensure that the label and field fit within the screen and do not overlap existing fields, message areas, or function-key text.
+Show the proposed diff and updated DDS preview. Do not save or compile anything until I review it."
+```
 
 **Review the diff and preview** — confirm that:
 - The screen field is named `SFLHRS`.
@@ -369,11 +372,13 @@ If it is correct, tell Bob:
 
 Ask Bob:
 
-> *"Update FLGHT4nn/QRPGSRC(FRS021) to handle Total Flight Hours using the existing Mileage implementation as the pattern.*
-> *Make the minimum changes needed to: increase the program-described FLIGHTSZ record length for the new packed field; add FHRS to the input specification at the correct record positions; load SFLHRS from FHRS when an existing record is retrieved; move SFLHRS to FHRS during add and update processing; include FHRS in the add and update output specifications; validate the screen value consistently with the existing numeric screen fields.*
-> *Preserve the existing OPM RPG style and fixed-column positioning.*
-> *After every successful CHAIN used to load an existing flight for display, explicitly move FHRS to SFLHRS, following the same database-to-screen pattern used for Mileage. Do not assume that the display file maps FHRS to SFLHRS automatically.*
-> *Do not modify any other programs during this demonstration. Show the proposed diff and explain each change briefly. Do not save or compile anything until I review it."*
+```text
+"Update FLGHT4nn/QRPGSRC(FRS021) to handle Total Flight Hours using the existing Mileage implementation as the pattern.*
+Make the minimum changes needed to: increase the program-described FLIGHTSZ record length for the new packed field; add FHRS to the input specification at the correct record positions; load SFLHRS from FHRS when an existing record is retrieved; move SFLHRS to FHRS during add and update processing; include FHRS in the add and update output specifications; validate the screen value consistently with the existing numeric screen fields.*
+Preserve the existing OPM RPG style and fixed-column positioning.*
+After every successful CHAIN used to load an existing flight for display, explicitly move FHRS to SFLHRS, following the same database-to-screen pattern used for Mileage. Do not assume that the display file maps FHRS to SFLHRS automatically.*
+Do not modify any other programs during this demonstration. Show the proposed diff and explain each change briefly. Do not save or compile anything until I review it."
+```
 
 **Expected changes** — because `FLHRS` is a four-digit packed-decimal field, it occupies three bytes in the record. The expected RPG changes include:
 - Increasing the `FLIGHTSZ` record length from 233 to 236
