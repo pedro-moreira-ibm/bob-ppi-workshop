@@ -128,7 +128,7 @@ When prompted, use the following selections:
 
 ## Exercise 2 — Program-Level Explanation & Modernization
 
-**Goal:** Understand an old OPM RPG program, then modernize it to free-format ILE RPG using the Bob modernization workflow. This exercise takes about 15 minutes to complete.
+In this exercise, you will use Bob to understand an old OPM RPG program, and then modernize it to free-format ILE RPG using the Bob modernization workflow.
 
 ### 2.1. Understand FRS409 (Order Modification Confirmation)
 
@@ -142,12 +142,12 @@ When prompted, use the following selections:
 
 4. Bob will explain the program: `FRS409` is the **Order Modification Confirmation Window** — an OPM RPG program that displays a confirmation popup when a user modifies an order. It handles F3 (Exit), F12 (Cancel), and Enter key inputs via a `DOUEQ` loop with `CASEQ` dispatch subroutines, using a workstation data structure (`WSDS`) to capture the last key pressed.
 
-### 2.2. Modernize FRS409 Using the RPG Modernization Workflow
+### 2.2. Modernize FRS409 using the RPG Modernization Workflow
 
 1. With `FRS409` still open in the editor, type in the Bob chat:
 
 ```text
-  "Can you modernize this program?"
+  "Can you use a workflow to modernize this program?"
 ```
 
 2. Bob recognizes the fixed-format OPM RPG code and offers to run the **RPG Modernization (Fixed to Free Format) workflow**.
@@ -165,7 +165,6 @@ Then Bob runs the **Code for IBM i** compile action for ILE RPG, triggering a `C
 
 5. Take a look at your new modernized file at `FLGHT4nn/QRPGLESRC/FRS409.RPLGE`
 
-**Program FLGHT4nn/FRS409 was created successfully (highest severity: 00).**
 
 ### 2.2. Review the Modernization Summary
 
@@ -175,13 +174,14 @@ Bob automatically generates a **Modernization Summary Report** in the Bob chat. 
 - Opcode-by-opcode conversion notes
 - Compilation result
 
-You can copy and paste this as `FRS409-Modernization-Report.md` in your workspace for documentation.
+Ask Bob to save this information into a new file in your workspace.
 
-> ✅ You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
+```text
+Using the generate information, create a file named 'FRS409-Modernization-Report.md' in my workspace.
+```
 
-> ✅ At the Bottom of the Bob Chat Panel , Click on the 'File Changed' item, see `FRS409.RPGLE` diff. This resulting source is the new FRS409 ILE (RPGLE) program source deriving from the old `FRS409.RPG` OPM program. 
 
-> ✅ In the Object Browser, check the new FRS409.PGM timestamp in `Detail` (right click on the file). Your new program is ready for further testing. 
+✅ You've just modernized a 30-year-old RPG program to modern free-format ILE RPG — with AI-assisted compilation — in minutes!
 
 ---
 
