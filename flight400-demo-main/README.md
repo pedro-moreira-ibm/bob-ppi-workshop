@@ -7,26 +7,22 @@
 
 ---
 
-## Part 0 — Environment Setup 
-
-> **Before you begin:** Your instructor must have restored the FLIGHT400 application on IBM i and created your assigned `FLGHT4nn` library. For the optional React warm-up exercise, Node.js 22 and npm must also be installed on IBM i. Your instructor will provide your connection details and library assignment.
-
----
+## Environment Setup 
 
 ### Install the Premium Package for i / IBM i Developer Pack for VS Code and Bob IDE
 
 1. Open **Bob IDE**.
-2. Go to the **Extensions** view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
+2. Go to the **Extensions** (`Cmd+Shift+X` / `Ctrl+Shift+X`).
 3. Search for **"Premium Package"** and install the **Premium Package for i** (publisher: *IBM*), that depends on extensions contained in the **IBM i Developer Pack** . This bundle includes:
    - **Code for IBM i** — source editing, object browser, IFS browser, Db2 for i extension etc. 
 4. After installation, reload Bob IDE when prompted.
-5. In the **Bob** extension settings (Activity sidebar), ensure the **Premium Package for i** is activated — this unlocks the IBM i Developer and IBM i Database modes used in later exercises.
-
----
+5. In the **Bob** extension settings, ensure the **Premium Package for i** is activated — this unlocks the IBM i Developer and IBM i Database modes used in later exercises.
 
 ### Keep track of your assigned library number
 
-**Important** The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list. Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs. 
+The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list. 
+
+Throughout the labs, participants must only use **their assigned number** so everyone can enjoy the labs. 
 
 | Student # | Library | Dev Port | React App URL |
 |:---------:|---------|:--------:|---------------|
@@ -37,19 +33,13 @@
 | … | … | … | … |
 | 50 | FLGHT450 | 3050 | http://localhost:3050 |
 
-> 💡 The **Dev Port** is only needed if you complete **Exercise 1 (Optional Warm-Up)**. When Bob asks you to pin your Vite dev server to a port, use the value from the **Dev Port** column above. Your React app will then be reachable at the **React App URL** shown — provided your SSH tunnel from step 2 is active.
-
-> ✅ Make sure your `FLGHT4nn` library is in your library list (in the Code for i settings). 
-
-> ✅  If you have a 5250 terminal to your IBM i available, you can add the library to your lib list with `ADDLIBLE FLGHT4nn` if not already done, and launch the application from the CL (Green Screen) command prompt :  `GO FLGHT4nn/FRSMAIN` .
-
- > 💡 **Want to explore or troubleshoot the green-screen app?** See the [FLIGHT400 Quick Reference Guide](FLIGHT400-GUIDE.md) for navigation tips, menu structure, and common operations.
-
----
 
 ### Connection to IBM i
 1. In Bob IDE, open the IBM i panel (left sidebar).
-2. Click New Connection and enter the host IP, user profile, and password provided by your instructor.
+2. Click **New Connection** and enter the following data:
+- Host IP: 
+- User profile:
+- Private key found [here]().
 - Establish the connection to your IBM i this is a standard connection to your IBM i.
 ![i connection](pics/i-connection.png)
 3. In the Code for IBM i object browser, browse library FLGHT4nn where you replace nn with your library number given to you by the instructor (ex: FLGHT400, FLGHT401, etc.) — this contains the original source members (RPG, CL, DDS, SQL) for reference.
