@@ -189,7 +189,9 @@ Using the generated information, create a file named 'FRS409-Modernization-Repor
 
 ## Exercise 3 — Field Expansion: Add Total Flight Hours
 
-In this exercise, you will use Bob to explore the Flight Maintenance application and add a new business field — *Total Flight Hours* — across its DDS and RPG components. The completed field will be a four-digit whole number (type: Numeric, digits: 4, decimal places: 0, valid range: 0–9999) and it will use the following names:
+In this exercise, you will use Bob to explore the Flight Maintenance application and add a new business field — *Total Flight Hours* — across its DDS and RPG components. The objective is to show Bob exploring legacy IBM i code, performing an impact analysis, making coordinated source changes, compiling the direct application path, and validating the result.
+
+The completed field will be a four-digit whole number (type: Numeric, digits: 4, decimal places: 0, valid range: 0–9999) and it will use the following names:
 
 | Layer | Field Name |
 |---|---|
@@ -198,21 +200,13 @@ In this exercise, you will use Bob to explore the Flight Maintenance application
 | Screen | `SFLHRS` |
 
 
-The objective is to show Bob exploring legacy IBM i code, performing an impact analysis, making coordinated source changes, compiling the direct application path, and validating the result.
-
-**Before You Begin**
-
 In the Bob chat panel:
 
 1. Select **IBM i Developer** mode.
 2. Set the scope to **Library List (QSYS)**.
 3. Confirm that `FLGHT4nn` is on the library list.
 
-For this demonstration, Bob should update only the direct Flight Maintenance path:
-
-```
-FLIGHTS → FLIGHTSZ → FRS021 → FRS021DF
-```
+For this demonstration, Bob should update only the direct Flight Maintenance path: FLIGHTS → FLIGHTSZ → FRS021 → FRS021DF.
 
 ---
 
