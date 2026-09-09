@@ -500,7 +500,10 @@ Explain the direct cause of this compile error and propose the smallest correcti
 | Save | Only if an error requires a reviewed correction |
 | Compile | Yes, only `FLIGHTS`, `FLIGHTSZ`, `FRS021DF`, and `FRS021` |
 
-5. ⚠️ **Note:** If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the workshop or leave it as an item at the end.
+  <pre>
+  If another program such as `FRS003`, `FRS413`, or `BFLGHT` is also affected, record it as follow-up work. Do not update or compile it during the workshop or leave it as an item at the end.
+  </pre>
+
 
 ### 3.7. Validate the result
 
@@ -514,7 +517,7 @@ Finish with a short summary of the end-to-end field mapping and list any additio
 
 Bob should confirm the complete field path:
 
-```
+<pre>
 Database:  FLIGHTS.FLHRS
                 ↓
 Logical:   FLIGHTSZ.FHRS
@@ -522,7 +525,8 @@ Logical:   FLIGHTSZ.FHRS
 Program:   FRS021
                 ↓
 Screen:    FRS021DF.SFLHRS
-```
+</pre>
+
 
 &nbsp;
 
