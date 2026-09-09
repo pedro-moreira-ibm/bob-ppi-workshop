@@ -96,9 +96,12 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
    - `FLIGHTS` references `FRCITY` and `TOCITY` for departure/arrival cities
 <br>
 💡 Note: Bob can also integrate with external diagramming tools such as Draw.io, allowing you to generate richer, editable architecture diagrams from the application analysis.
-<br>
+
+&nbsp;
+
 ![draw io](pics/drawIo.png)
-<br>
+
+&nbsp;
 
 ### 1.5. *(Optional)* Generate Business Rules Extraction (5 minutes)
 Drill down on a specific member by generating a functional business document using the Business Rules Extraction workflow.
