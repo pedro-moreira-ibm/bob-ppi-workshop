@@ -73,15 +73,14 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
    - `*MENU` — Application menus
 
 ![filter](pics/filter.png)
-![filter](pics/filter1.png)
+![filter1](pics/filter1.png)
 
 
 5. Expand **Source Files** and browse `QRPGSRC` — open a couple of RPG programs to get a feel for the classic fixed-format style.
 6. Navigate to **`QDDSSRCD`** and open the display file `FRS001DF`. In the editor, Click on **Preview All** on the first line of code. It renders the green-screen layout visually — notice the classic 5250 style.
 
-<p align="center">
-  <img src="pics/filter2" alt="filter2">
-</p>
+![filter2](pics/filter2.png)
+
 ### 1.2. Generate an architecture overview with Bob
 
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
