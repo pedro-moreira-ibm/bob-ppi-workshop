@@ -846,8 +846,9 @@ Rather than modifying an existing program, you'll create a clean, standalone SQL
 
 1. In the **Object Browser**, find the `QRPGLESRC` folder inside your assigned `FLGHT4nn` library. Right-click it and select **New Member**.
 
-   ![New member dialog](pics/add-member.png)
-
+<p align="center">
+  <img src="pics/add-member.png" alt="add-member" width="700">
+</p>
 2. Enter the name **`CUSTCHK.SQLRPGLE`** and confirm.
 
 3. Paste the following source (starting from `**free` and ending with `end-proc;`) into the new member and save with **Ctrl/Cmd + S**:
