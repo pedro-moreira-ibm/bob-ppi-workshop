@@ -53,7 +53,10 @@
 
 ![add library](pics/add-library.png)
 
-![add library2](pics/add-library2.png)
+<p align="center">
+  <img src="pics/add-library2.png" alt="add library2" width="500">
+</p>
+
 &nbsp;
 
 ✅ All set! You are now ready to start the exercises.
