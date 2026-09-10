@@ -53,6 +53,7 @@
 
 ![add library](pics/add-library.png)
 
+![add library2](pics/add-library2.png)
 &nbsp;
 
 ✅ All set! You are now ready to start the exercises.
@@ -66,22 +67,14 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 ### 1.1. Browse the application in the object browser
 
 1. In the IBM i sidebar, expand **User Library List** and **Object Browser**.
-2. Add **FLGHT4nn** (⚠️replace the 'nn' with your library number) to your library list if not done
-<p align="center">
-  <img src="pics/add-library" alt="library">
-</p>
-<p align="center">
-  <img src="pics/add-library2" alt="library2">
-</p>
-
-3. Add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
+2. Add **FLGHT4nn** (⚠️replace the 'nn' with your library number) to your library list if not done, and then add a filter to the **FLGHT4nn** library in the Object Browser. To see everything, make sure the filter is *ALL, not just *SRCPF. Then navigate to the **FLGHT4nn** library in the Object Browser. You will see its contents organized by object type:
    - `*PGM` — RPG and CL programs (e.g. `FRS001`, `FRS021`, `FRS409`)
    - `*FILE` — Display files and database physical/logical files
    - `*MENU` — Application menus
 
-<p align="center">
-  <img src="pics/filter" alt="filter">
-</p>
+![filter](pics/filter.png)
+![filter](pics/filter1.png)
+
 
 5. Expand **Source Files** and browse `QRPGSRC` — open a couple of RPG programs to get a feel for the classic fixed-format style.
 6. Navigate to **`QDDSSRCD`** and open the display file `FRS001DF`. In the editor, Click on **Preview All** on the first line of code. It renders the green-screen layout visually — notice the classic 5250 style.
