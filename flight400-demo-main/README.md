@@ -17,6 +17,10 @@
 4. After installation, reload Bob IDE when prompted.
 5. In the **Bob** extension settings, ensure the **Premium Package for i** is activated — this unlocks the IBM i Developer and IBM i Database modes used in later exercises.
 
+<p align="center">
+  <img src="pics/extension.png" alt="PPi extension">
+</p>
+
 ### 2. Keep track of your assigned library number
 
 ⚠️ The instructor will create libraries FLGHT401 through FLGHT4nn, each containing a full copy of all objects from FLGHT400. Each participant will have their assigned library (e.g. FLGHT401) added to their library list.
