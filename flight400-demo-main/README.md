@@ -208,7 +208,7 @@ Bob spins up a subagent to convert the fixed-format RPG to modern free-format IL
 
 5. Bob will also prompt: **"Confirm Output Member Location"** — ensure the suggested location has the path with your library number and continue. Bob will use all its RPG skills to modernize this source code. Approve the requested tasks.
 
-6. Take a look at your new modernized file at `FLGHT4nn/QRPGLESRC/FRS409.RPLGE`
+6. Take a look at your new modernized file at `FLGHT4nn/QRPGLESRC/FRS409.RPGLE`
 
 ### 2.3. Review the modernization summary
 
@@ -789,15 +789,15 @@ Inspect the job ranked first and determine whether it is currently CPU-bound. Ch
 Bob will query the system services such as the `QSYS2.ACTIVE_JOB_INFO` table function and return a summary of active jobs with CPU utilization — giving you an instant health check on your LPAR, then use other tools to read the logs and other information, and create a first report. You might see the Node.js job running if you completed the optional React exercise and never stopped the web server.
 
 
-4. Try to ask Bob which programs have not been recompiled in the last five years:
+4. Ask Bob which program objects were created or recreated more than five years ago:
 
 ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
-Which programs in the FLGHT4nn library have not been recompiled in the last 5 years?
+Which *PGM objects in the FLGHT4nn library were created or recreated more than 5 years ago? Use OBJCREATED from QSYS2.OBJECT_STATISTICS as the comparison date.
 ```
 
-Bob will query `QSYS2.OBJECT_STATISTICS` filtering on object type `*PGM` in `FLGHT4nn`, compare the `LAST_USED_TIMESTAMP` or `OBJCREATED` attributes, and list the stale programs — perfect input for a modernization backlog.
+Bob will query `QSYS2.OBJECT_STATISTICS`, filter on object type `*PGM` in `FLGHT4nn`, compare `OBJCREATED` with the five-year threshold, and list the older program objects — useful input for a modernization backlog.
 
 &nbsp;
 
