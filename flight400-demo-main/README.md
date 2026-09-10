@@ -824,20 +824,20 @@ These two workflows work together in sequence:
    - Navigate to the **Components** tab → **Add Component** → select **RPGUnit** → **Install**.
 
 <p align="center">
-  <img src="pics/components-1.png" alt="components-1" width="500">
+  <img src="pics/components-1.png" alt="components-1" width="700">
 </p>
 <p align="center">
-  <img src="pics/components-2.png" alt="components-2" width="500">
+  <img src="pics/components-2.png" alt="components-2" width="700">
 </p>
 <p align="center">
-  <img src="pics/components-3.png" alt="components-3" width="500">
+  <img src="pics/components-3.png" alt="components-3" width="700">
 </p>
 <p align="center">
-  <img src="pics/components-4.png" alt="components-4" width="500">
+  <img src="pics/components-4.png" alt="components-4" width="700">
 </p>
 3. **Update your library list** to include: `FLGHT4nn`, `RPGUNIT`, `QDEVTOOLS`.
 <p align="center">
-  <img src="pics/testing-libraries.png" alt="testing-libraries" width="500">
+  <img src="pics/testing-libraries.png" alt="testing-libraries" width="700">
 </p>
 
 ### 6.1. Create a new source member `CUSTCHK`
