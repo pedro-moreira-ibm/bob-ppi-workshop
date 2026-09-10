@@ -189,10 +189,18 @@ Can you use a workflow to modernize this program?
 2. Bob recognizes the fixed-format OPM RPG code and offers to run the **RPG Modernization (Fixed to Free Format) workflow**.
    → Choose **Start workflow** to start it.
 
+<p align="center">
+  <img src="pics/workflow.png" alt="workflow" width="400">
+</p>
+
 3. The workflow form opens. Fill in the details:
    - **Source file:** `FLGHT4nn/QRPGSRC`
    - **Source member:** `FRS409` (Bob pre-fills this from the open editor)
    - Accept the other defaults and click **Analyze Member**.
+
+<p align="center">
+  <img src="pics/workflow1.png" alt="workflow1" width="400">
+</p>
 
 Bob spins up a subagent to convert the fixed-format RPG to modern free-format ILE RPG.
 
