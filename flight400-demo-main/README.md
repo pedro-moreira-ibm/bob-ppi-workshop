@@ -93,12 +93,26 @@ In this exercise, we will use Bob's IBM i Developer mode to automatically genera
 
 1. Click the **Open Bob** icon in the top right Activity Bar to open the chat panel.
 2. If not already in **IBM i Developer** mode, switch to it using the mode selector at the top of the chat.
+
+<p align="center">
+  <img src="pics/devmode.png" alt="devmode" width="500">
+</p>
+
 3. Click the **`+` (Scope) button** and select **(QSYS) Library List** as the context scope. This gives Bob visibility into the full application structure. Again, make sure that `FLGHT4nn` is in the library list. Bob will first search in this list before searching in all QSYS.
+
+<p align="center">
+  <img src="pics/workspace.png" alt="workspace" width="500">
+</p>
+
 4. ⚠️ Ask Bob the following, replacing `nn` with the two-digit suffix of your assigned library (e.g. `01` for `FLGHT401`, `02` for `FLGHT402`).
 
 ```text
 Generate a comprehensive architecture overview of the FLIGHT4nn application in QSYS in Markdown format. Include a high-level description, the main program flows, key programs and their roles, a Mermaid architecture diagram, and a summary of the database tables used.
 ```
+
+<p align="center">
+  <img src="pics/prompt1.png" alt="prompt1" width="500">
+</p>
 
 5. Bob will analyze the programs, source members, and database files and return a structured Markdown document. Review the output — notice how it identifies the menu-driven architecture, the core transaction programs, and the underlying database schema.
 
