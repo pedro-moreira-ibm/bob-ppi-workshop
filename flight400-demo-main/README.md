@@ -823,7 +823,22 @@ These two workflows work together in sequence:
    - Open Code for IBM i connection settings (gear icon, bottom of screen).
    - Navigate to the **Components** tab → **Add Component** → select **RPGUnit** → **Install**.
 
+<p align="center">
+  <img src="pics/components-1.png" alt="components-1" width="500">
+</p>
+<p align="center">
+  <img src="pics/components-2.png" alt="components-2" width="500">
+</p>
+<p align="center">
+  <img src="pics/components-3.png" alt="components-3" width="500">
+</p>
+<p align="center">
+  <img src="pics/components-4.png" alt="components-4" width="500">
+</p>
 3. **Update your library list** to include: `FLGHT4nn`, `RPGUNIT`, `QDEVTOOLS`.
+<p align="center">
+  <img src="pics/testing-libraries.png" alt="testing-libraries" width="500">
+</p>
 
 ### 6.1. Create a new source member `CUSTCHK`
 
