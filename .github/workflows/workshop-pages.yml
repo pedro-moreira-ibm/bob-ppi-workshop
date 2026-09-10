@@ -1,0 +1,40 @@
+name: Publish workshop guide
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: workshop-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: workshop-site/package-lock.json
+      - uses: actions/configure-pages@v5
+      - run: npm ci
+        working-directory: workshop-site
+      - run: npm run build && npm test
+        working-directory: workshop-site
+        env:
+          SITE_BASE: /bob-ppi-workshop
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: workshop-site/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
