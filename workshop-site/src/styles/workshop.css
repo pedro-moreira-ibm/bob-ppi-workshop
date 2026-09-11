@@ -80,9 +80,11 @@ main:has(.overview-hero) h1::after { content: ''; display: block; width: 4.5rem;
 .prompt-toolbar button { font-family: var(--sl-font); font-size: .78rem; letter-spacing: 0; cursor: pointer; background: var(--sl-color-bg); border: 1px solid var(--workshop-border); color: var(--sl-color-accent-high); border-radius: 4px; padding: .25rem .7rem; }
 .prompt-frame pre { border: 0; border-radius: 0; margin: 0; padding: 1.2rem; font-size: .79rem; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .prompt-frame code { white-space: inherit; }
-.illustrative-frame { background: #f4f7fb; border-color: #dce3ed; }
-.illustrative-frame .prompt-toolbar { background: #e8eef6; border-color: #d2dbe8; color: #34465f; }
+.illustrative-frame, .light-command-frame { background: #f4f7fb; border-color: #dce3ed; }
+.illustrative-frame .prompt-toolbar, .light-command-frame .prompt-toolbar { background: #e8eef6; border-color: #d2dbe8; color: #34465f; }
 .illustrative-frame pre, .illustrative-frame code { background: #f4f7fb !important; color: #172b4d !important; }
+.light-command-frame pre, .light-command-frame code, .light-command-frame pre * { background: #f4f7fb !important; color: #101820 !important; }
+.light-command-frame .prompt-toolbar button { background: #ffffff; border-color: #8d9bac; color: #0f3d78; }
 .screenshot-button { display: inline-block; border: 1px solid var(--workshop-border); border-radius: 8px; padding: .5rem; background: var(--workshop-surface); cursor: zoom-in; max-width: 100%; margin: 1rem auto; }
 .screenshot-button img { margin: 0; border-radius: 4px; max-height: 36rem; object-fit: contain; }
 .completion-panel { margin-top: 3rem; padding: 1.3rem; border: 1px solid var(--workshop-border); border-left: 3px solid var(--sl-color-accent); border-radius: 5px; }

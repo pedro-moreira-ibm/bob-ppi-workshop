@@ -22,9 +22,10 @@ if (content) {
     const isPrompt = language === 'text';
     const isSqlQuery = language === 'sql' && code.textContent.includes('Flight Booking Summary');
     const isRpgSource = code.textContent.includes('dcl-proc checkCustomerExists export') && code.textContent.includes('ctl-opt nomain');
-    const isCopyable = isPrompt || isSqlQuery || isRpgSource;
+    const isExercise7Command = panel?.dataset.page === 'exercise-7' && language === 'bash';
+    const isCopyable = isPrompt || isSqlQuery || isRpgSource || isExercise7Command;
     const isIllustrative = !isCopyable;
-    label.textContent = isPrompt ? 'PROMPT FOR BOB' : isSqlQuery ? 'SQL QUERY' : isRpgSource ? 'SOURCE' : 'ILLUSTRATIVE EXAMPLE';
+    label.textContent = isPrompt ? 'PROMPT FOR BOB' : isSqlQuery ? 'SQL QUERY' : isRpgSource ? 'SOURCE' : isExercise7Command ? 'COMMAND' : 'ILLUSTRATIVE EXAMPLE';
     toolbar.append(label);
     if (isCopyable) {
       const button = document.createElement('button');
@@ -37,6 +38,7 @@ if (content) {
       toolbar.append(button);
     }
     if (isIllustrative) frame.classList.add('illustrative-frame');
+    if (isExercise7Command) frame.classList.add('light-command-frame');
     pre.before(frame); frame.append(toolbar, pre);
   }
   // Preserve original text for reversible personalization, including changing participant numbers.

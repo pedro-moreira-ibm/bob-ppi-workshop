@@ -107,6 +107,21 @@ test('illustrative examples are not copyable and documentation links are availab
   await expect(page.getByRole('link', { name: 'IBM i Cheat Sheet', exact: true })).toHaveAttribute('href', '/bob-ppi-workshop/docs/ibmi-premium-package-cheat-sheet.pdf');
 });
 
+test('exercise 7 shell commands stay light, readable and copyable', async ({ page, context }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.goto('./exercise-7/');
+  await page.locator('#participant-number').selectOption('3');
+  const commands = page.locator('.light-command-frame');
+  await expect(commands).toHaveCount(3);
+  for (const command of await commands.all()) {
+    await expect(command.locator('.prompt-toolbar')).toContainText('COMMAND');
+    await expect(command.getByRole('button', { name: 'Copy code or prompt' })).toBeVisible();
+    expect(await command.locator('code').evaluate(element => getComputedStyle(element).color)).toBe('rgb(16, 24, 32)');
+  }
+  await commands.first().getByRole('button', { name: 'Copy code or prompt' }).click();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toContain('3003:localhost:3003');
+});
+
 test('summary celebrates completion without separate resource pages', async ({ page }) => {
   await page.goto('./summary/');
   await expect(page.locator('.summary-celebration')).toBeVisible();
