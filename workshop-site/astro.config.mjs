@@ -10,8 +10,11 @@ export default defineConfig({
     favicon: '/favicon.svg',
     customCss: ['./src/styles/workshop.css'],
     expressiveCode: false,
-    components: { MarkdownContent: './src/components/WorkshopContent.astro' },
-    social: [{ icon: 'github', label: 'Original lab on GitHub', href: 'https://github.com/pedro-moreira-ibm/bob-ppi-workshop/tree/main/flight400-demo-main' }],
+    components: {
+      MarkdownContent: './src/components/WorkshopContent.astro',
+      Sidebar: './src/components/Sidebar.astro',
+      PageSidebar: './src/components/PageSidebar.astro',
+    },
     sidebar: [
       { label: 'Workshop overview', slug: '' },
       { label: 'Start here', items: [{ label: 'Environment setup', slug: 'setup' }] },
@@ -23,11 +26,14 @@ export default defineConfig({
         { label: '05 · Explore your system', slug: 'exercise-5' },
         { label: '06 · Build RPGUnit tests', slug: 'exercise-6' },
       ] },
-      { label: 'Go further', items: [
+      { label: 'Optional exercise', items: [
         { label: '07 · Build a React interface', slug: 'exercise-7', badge: 'Optional' },
-        { label: 'Workshop summary', slug: 'summary' },
-        { label: 'Application reference', slug: 'reference' },
-        { label: 'Sample skill', slug: 'sample-skill' },
+      ] },
+      { label: 'Workshop summary', slug: 'summary' },
+      { label: 'Useful Documentation', items: [
+        { label: 'Bob IDE', link: 'https://bob.ibm.com/docs/ide', attrs: { target: '_blank', rel: 'noopener noreferrer' } },
+        { label: 'Bob Shell', link: 'https://bob.ibm.com/docs/shell', attrs: { target: '_blank', rel: 'noopener noreferrer' } },
+        { label: 'IBM i Cheat Sheet', link: '/docs/ibmi-premium-package-cheat-sheet.pdf', attrs: { target: '_blank', rel: 'noopener noreferrer' } },
       ] },
     ],
   })],

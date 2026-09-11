@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const portFlag = process.argv.indexOf('--port');
 const port = Number(portFlag < 0 ? 4321 : process.argv[portFlag + 1]);
 const { base } = JSON.parse(await readFile(path.join(root, 'preview-config.json'), 'utf8'));
-const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.wasm': 'application/wasm', '.woff2': 'font/woff2', '.md': 'text/plain', '.xml': 'application/xml' };
+const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.pdf': 'application/pdf', '.wasm': 'application/wasm', '.woff2': 'font/woff2', '.md': 'text/plain', '.xml': 'application/xml' };
 http.createServer(async (req, res) => {
   try {
     let pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);

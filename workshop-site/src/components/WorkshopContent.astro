@@ -1,18 +1,20 @@
 ---
 import Default from '@astrojs/starlight/components/MarkdownContent.astro';
 const slug = Astro.locals.starlightRoute.id.replace(/\/$/, '');
-const isExercise = /^(setup|exercise-[1-7])$/.test(slug);
+const isSetup = slug === 'setup';
+const isExercise = /^exercise-[1-7]$/.test(slug);
+const showWorkspace = isSetup || isExercise;
 ---
-<section class="participant-panel" aria-label="Your workshop environment" data-page={slug} data-pagefind-ignore>
+{showWorkspace && <section class="participant-panel" aria-label="Your workshop environment" data-page={slug} data-pagefind-ignore>
   <div><span class="eyebrow">YOUR WORKSPACE</span><p class="workspace-description">One number. Your prompts, ready to paste.</p></div>
   <div class="participant-controls">
     <label for="participant-number">Participant number</label>
     <select id="participant-number"><option value="">Choose number</option>{Array.from({length:50},(_,i) => <option value={i+1}>{String(i+1).padStart(2,'0')}</option>)}</select>
     <output id="environment-label" aria-live="polite">Use the number assigned by your instructor.</output>
   </div>
-  <div class="workshop-progress"><span id="progress-label">0 of 7 core stages complete</span><progress id="progress-meter" max="7" value="0"></progress><a id="resume-link" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/setup/`}>Start workshop →</a></div>
-</section>
-<Default><slot /></Default>
-{isExercise && <div class="completion-panel" data-pagefind-ignore><label><input id="stage-complete" type="checkbox" /> Mark this {slug === 'setup' ? 'setup' : 'exercise'} complete</label><span>Progress is saved in this browser.</span></div>}
+  <div class="workshop-progress"><span id="progress-label">0 of 6 core exercises completed</span><progress id="progress-meter" max="6" value="0"></progress><a id="resume-link" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/exercise-1/`}>Start exercises →</a></div>
+</section>}
+<div class:list={{ 'summary-page': slug === 'summary' }}><Default><slot /></Default></div>
+{isExercise && <div class="completion-panel" data-page={slug} data-pagefind-ignore><label><input id="stage-complete" type="checkbox" /> Mark this exercise complete</label><span>Progress is saved in this browser.</span></div>}
 <dialog id="image-viewer" aria-label="Enlarged screenshot"><button type="button" class="close-viewer" autofocus>Close ×</button><img alt="" /><p></p></dialog>
 <script src="../scripts/workshop.js"></script>

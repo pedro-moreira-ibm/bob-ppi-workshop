@@ -1,0 +1,51 @@
+---
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import SidebarSectionLinks from './SidebarSectionLinks.astro';
+
+const { toc } = Astro.locals.starlightRoute;
+const sectionItems = toc?.items.length === 1 && toc.items[0]?.slug === '_top'
+  ? toc.items[0].children
+  : toc?.items;
+---
+
+<Default />
+{sectionItems && sectionItems.length > 0 && (
+  <nav class="current-page-sections" aria-label="Sections in the current page" data-pagefind-ignore>
+    <details open>
+      <summary><span>Sections</span><span class="section-caret" aria-hidden="true">›</span></summary>
+      <SidebarSectionLinks items={sectionItems} />
+    </details>
+  </nav>
+)}
+
+<script>
+  function placeCurrentSections() {
+    const sections = document.querySelector('.current-page-sections');
+    const currentItem = document.querySelector('#starlight__sidebar a[aria-current="page"]')?.closest('li');
+    if (sections && currentItem && sections.parentElement !== currentItem) currentItem.append(sections);
+  }
+  placeCurrentSections();
+  document.addEventListener('astro:page-load', placeCurrentSections);
+</script>
+
+<style>
+  .current-page-sections {
+    border-inline-start: 2px solid var(--sl-color-accent);
+    margin: 0.2rem 0 0 0.5rem;
+    padding: 0.15rem 0 0.2rem 0.55rem;
+  }
+  .current-page-sections summary {
+    align-items: center;
+    color: var(--sl-color-gray-2);
+    cursor: pointer;
+    display: flex;
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0.25rem 0.35rem;
+  }
+  .current-page-sections summary::-webkit-details-marker { display: none; }
+  .section-caret { font-size: 1rem; transition: transform .15s ease; }
+  details[open] > summary .section-caret { transform: rotate(90deg); }
+</style>

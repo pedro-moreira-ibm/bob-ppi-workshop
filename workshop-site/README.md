@@ -23,13 +23,14 @@ npm run preview
 
 ## Content and behavior
 
-- `npm run sync` generates the pages from the original README, application reference, and sample skill. It runs before both development and production builds. Restart the development server after changing the original Markdown.
-- All README sections, prompts, tables, screenshots, and instructions are retained. Relative asset links are adapted for the website. Supporting Markdown and the Draw.io architecture file are available under `public/lab/` after syncing.
-- Original files remain in their existing locations. Generated pages and copied assets are ignored by Git; change the source material to update content, or `scripts/sync-content.mjs` to change presentation.
+- `npm run sync` generates the workshop pages from the original README and publishes the sample skill as a directly linked download for Exercise 7. It runs before both development and production builds. Restart the development server after changing the original Markdown.
+- `scripts/sync-content.mjs` applies presentation-only corrections, numbering, terminology, and participant-aware wording while generating the website. The source lab is never edited.
+- Original files remain in their existing locations. Generated pages and copied assets are ignored by Git; update `scripts/sync-content.mjs` to change the website presentation without changing the original lab.
 - Participant selection fills in explicit `4nn`, `30nn`, and `<DEV_PORT>` placeholders in page text and copyable code. Literal examples such as `FLGHT400`, and user/host placeholders, remain as authored. Selecting “Choose number” restores the placeholders.
-- Completion tracking and participant selection use browser local storage. Setup plus exercises 1–6 make up the seven core stages. Exercise 7 is tracked separately as optional. There is no account, server, or instructor dashboard.
+- Completion tracking and participant selection use browser local storage. Exercises 1–6 make up the six core exercises. Exercise 7 is tracked separately. There is no account, server, or instructor dashboard.
 - Screenshot zoom supports keyboard activation and Escape to close. Search is generated at build time. Pages remain readable without JavaScript; personalization, copy controls, zoom, and progress require it.
 - The original private-key link points to its existing GitHub location. Credential files are never copied into the published site.
+- The IBM i and Premium Package for i cheat sheet is a site-only PDF under `public/docs/` and opens from Useful Documentation.
 - Typography uses IBM Plex from Google Fonts, with local system-font fallbacks.
 
 ## Verify
