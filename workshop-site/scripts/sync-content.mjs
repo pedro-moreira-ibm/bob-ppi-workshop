@@ -140,11 +140,17 @@ const cards = [
 ];
 await page('index', 'Modernize IBM i applications with IBM Bob', `
 <div class="overview-hero">
+<div class="hero-copy">
 <span class="eyebrow">IBM BOB · PREMIUM PACKAGE FOR i</span>
 <p class="hero-lead">Your IBM i modernization journey starts here.</p>
 <p>Get hands-on with Flight400. Understand an existing application, evolve its code, and explore what comes next—with Bob alongside you.</p>
 <div class="hero-actions"><a class="primary-action" href="${base}/setup/">Begin the workshop <span>↗</span></a></div>
 <div class="hero-facts"><span><strong>06</strong> core exercises</span><span><strong>01</strong> optional exercise</span></div>
+</div>
+<button class="bob-greeting" type="button" aria-label="Wave hello with IBM Bob" data-animation-src="${base}/assets/bob-wave.json">
+<img class="bob-standing" src="${base}/assets/bob-standing.webp" alt="" width="512" height="512" decoding="async" />
+<span class="bob-wave" aria-hidden="true"></span>
+</button>
 </div>
 
 ## Your flight plan

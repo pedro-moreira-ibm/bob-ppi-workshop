@@ -80,6 +80,18 @@ test('overview title is centered and highlighted across the content width', asyn
   expect(presentation.background).toContain('linear-gradient');
 });
 
+test('official IBM Bob waves on the overview page', async ({ page }) => {
+  await page.goto('./');
+  const bob = page.getByRole('button', { name: 'Wave hello with IBM Bob' });
+  await expect(bob).toBeVisible();
+  await expect(bob.locator('.bob-standing')).toHaveAttribute('src', /\/assets\/bob-standing\.webp$/);
+  await expect(bob).toHaveClass(/is-ready/);
+  await expect(bob.locator('.bob-wave svg')).toBeVisible();
+  await expect(bob).not.toHaveClass(/is-waving/, { timeout: 5000 });
+  await bob.hover();
+  await expect(bob).toHaveClass(/is-waving/);
+});
+
 test('illustrative examples are not copyable and documentation links are available', async ({ page }) => {
   for (const slug of ['setup', ...Array.from({ length: 7 }, (_, i) => `exercise-${i + 1}`)]) {
     await page.goto(`./${slug}/`);

@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@astrojs/starlight": "0.42.0",
-    "astro": "7.3.2"
+    "astro": "7.3.2",
+    "lottie-web": "5.13.0"
   },
   "devDependencies": { "@playwright/test": "^1.58.0" }
 }

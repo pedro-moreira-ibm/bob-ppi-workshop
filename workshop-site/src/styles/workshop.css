@@ -51,11 +51,20 @@ main:has(.overview-hero) h1::after { content: ''; display: block; width: 4.5rem;
 .workshop-progress { grid-column: 1 / -1; display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--workshop-border); padding-top: .8rem; font-size: .75rem; }
 .workshop-progress progress { flex: 1; min-width: 2rem; height: 5px; accent-color: var(--sl-color-accent); }
 .workshop-progress a { color: var(--sl-color-accent-high); text-decoration: none; font-weight: 500; }
-.overview-hero { position: relative; overflow: hidden; background: #101e38; color: #e0eaff; border-radius: 12px; padding: 2.8rem; margin-top: 0 !important; }
+.overview-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 21rem); align-items: center; gap: 1.5rem; background: #101e38; color: #e0eaff; border-radius: 12px; padding: 2.8rem; margin-top: 0 !important; }
 .overview-hero::after { content: ''; position: absolute; pointer-events: none; width: 24rem; height: 24rem; border: 1px solid #3c65a5; border-radius: 50%; right: -16rem; top: -6rem; box-shadow: 0 0 0 3rem #1d355344, 0 0 0 6rem #1d355333, 0 0 0 9rem #1d355322; }
+.hero-copy { position: relative; z-index: 1; min-width: 0; }
 .overview-hero .eyebrow { color: #a6c8ff; }
 .overview-hero p { position: relative; z-index: 1; max-width: 43ch; color: #c1cde0; }
 .overview-hero .hero-lead { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.18; letter-spacing: -.035em; color: white; max-width: 20ch; margin: 1.2rem 0; }
+.bob-greeting { position: relative; z-index: 1; justify-self: end; width: min(100%, 20rem); aspect-ratio: 1; padding: 0; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(0 1.2rem 1.3rem #02081766); transition: transform .2s ease, filter .2s ease; }
+.bob-greeting:hover, .bob-greeting:focus-visible { transform: translateY(-.2rem); filter: drop-shadow(0 1.35rem 1.45rem #02081785); }
+.bob-standing, .bob-wave { position: absolute; inset: 0; width: 100%; height: 100%; }
+.bob-standing { object-fit: contain; transition: opacity .15s ease; }
+.bob-wave { visibility: hidden; }
+.bob-wave svg { display: block; width: 100% !important; height: 100% !important; }
+.bob-greeting.is-ready .bob-standing { opacity: 0; }
+.bob-greeting.is-ready .bob-wave { visibility: visible; }
 .hero-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-top: 2rem !important; }
 .hero-actions a { text-decoration: none; font-size: .85rem; color: #d0e2ff; }
 .hero-actions .primary-action { background: #0f62fe; color: white; padding: .85rem 1.2rem; border-radius: 4px; display: flex; gap: 2rem; }
@@ -119,7 +128,8 @@ main:has(.summary-page) h1 { max-width: none; text-align: center; }
   .participant-panel { grid-template-columns: 1fr; padding: 1rem; gap: 1rem; }
   .workshop-progress { flex-wrap: wrap; gap: .5rem; }
   .workshop-progress a { width: 100%; }
-  .overview-hero { padding: 1.6rem; }
+  .overview-hero { grid-template-columns: 1fr; gap: .7rem; padding: 1.6rem; }
+  .bob-greeting { justify-self: center; width: min(72vw, 12rem); margin: -.3rem 0 -1rem; }
   .exercise-grid { grid-template-columns: 1fr; }
   .hero-facts { gap: 1rem; }
   .setup-card { align-items: flex-start; gap: .8rem; }
@@ -128,9 +138,9 @@ main:has(.summary-page) h1 { max-width: none; text-align: center; }
   .summary-page .sl-markdown-content th, .summary-page .sl-markdown-content td { padding: .55rem; }
   .summary-page .sl-markdown-content td:first-child { white-space: normal; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } .bob-greeting { cursor: default; } }
 @media print {
-  .participant-panel, .prompt-toolbar, .completion-panel, .hero-actions, #image-viewer { display: none !important; }
+  .participant-panel, .prompt-toolbar, .completion-panel, .hero-actions, .bob-greeting, #image-viewer { display: none !important; }
   .overview-hero { background: white; color: black; }
   .overview-hero p, .overview-hero strong { color: black; }
   .exercise-grid { display: block; }

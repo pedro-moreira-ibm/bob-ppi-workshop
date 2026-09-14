@@ -1,5 +1,46 @@
 import { personalize } from './personalize.js';
 
+const bob = document.querySelector('.bob-greeting');
+if (bob && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const animationContainer = bob.querySelector('.bob-wave');
+  const animationSource = bob.dataset.animationSrc;
+  let animation;
+  const playWave = () => {
+    if (!animation?.isPaused) return;
+    bob.classList.add('is-waving');
+    animation.goToAndPlay(0, true);
+  };
+  bob.addEventListener('pointerenter', playWave);
+  bob.addEventListener('click', playWave);
+  bob.addEventListener('focus', playWave);
+  Promise.all([
+    import('lottie-web/build/player/lottie_light'),
+    fetch(animationSource).then(response => {
+      if (!response.ok) throw new Error(`Bob animation returned ${response.status}`);
+      return response.json();
+    }),
+  ]).then(([{ default: lottie }, animationData]) => {
+    animation = lottie.loadAnimation({
+      container: animationContainer,
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      animationData,
+    });
+    animation.addEventListener('DOMLoaded', () => {
+      animation.goToAndStop(0, true);
+      bob.classList.add('is-ready');
+      window.setTimeout(playWave, 450);
+    });
+    animation.addEventListener('complete', () => {
+      bob.classList.remove('is-waving');
+      animation.goToAndStop(0, true);
+    });
+  }).catch(() => {
+    // The official standing artwork remains visible if animation loading fails.
+  });
+}
+
 const panel = document.querySelector('.participant-panel');
 const content = document.querySelector('.sl-markdown-content');
 if (content) {
