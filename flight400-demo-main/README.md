@@ -39,11 +39,11 @@
 ### 3. Connection to IBM i
 
 1. In Bob IDE, open the IBM i panel (left sidebar).
-2. Click **New Connection** and enter the following data:
+2. Click **New Connection** and ask the workshop instructor for the following connection details:
 
-   - Host IP:
-   - User profile: `ITZUSER`
-   - Private key found [here](ssh_private_key.pem).
+   - Host IP
+   - User Profile
+   - Private key
 
 ![i connection](pics/i-connection.png)
 
