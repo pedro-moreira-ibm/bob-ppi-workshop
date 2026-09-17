@@ -29,6 +29,7 @@ test('generated workshop applies the presentation-only content rules', async () 
   const workshop = Object.values(pages).join('\n');
   assert.match(pages.index, /Modernize IBM i applications with IBM Bob/);
   assert.doesNotMatch(pages.index, /Keep these within reach|View original lab|optional challenge|IBM i real environment/);
+  assert.doesNotMatch(pages.setup, /✅ All set!/);
   assert.doesNotMatch(workshop, /Bob chat UI|replacing `nn`|replace the 'nn'/i);
   assert.match(pages['exercise-4'], /### 4\.1\.[\s\S]*### 4\.2\.[\s\S]*### 4\.3\./);
   assert.match(pages['exercise-5'], /### 5\.1\./);

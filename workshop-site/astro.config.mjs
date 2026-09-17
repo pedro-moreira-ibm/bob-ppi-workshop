@@ -14,6 +14,7 @@ export default defineConfig({
       MarkdownContent: './src/components/WorkshopContent.astro',
       Sidebar: './src/components/Sidebar.astro',
       PageSidebar: './src/components/PageSidebar.astro',
+      Pagination: './src/components/Pagination.astro',
     },
     sidebar: [
       { label: 'Workshop overview', slug: '' },

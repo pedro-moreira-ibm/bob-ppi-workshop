@@ -4,6 +4,8 @@ const slug = Astro.locals.starlightRoute.id.replace(/\/$/, '');
 const isSetup = slug === 'setup';
 const isExercise = /^exercise-[1-7]$/.test(slug);
 const showWorkspace = isSetup || isExercise;
+const isCompletable = isSetup || isExercise;
+const completionLabel = isSetup ? 'Mark environment setup complete' : 'Mark this exercise complete';
 ---
 {showWorkspace && <section class="participant-panel" aria-label="Your workshop environment" data-page={slug} data-pagefind-ignore>
   <div><span class="eyebrow">YOUR WORKSPACE</span><p class="workspace-description">One number. Your prompts, ready to paste.</p></div>
@@ -15,6 +17,6 @@ const showWorkspace = isSetup || isExercise;
   <div class="workshop-progress"><span id="progress-label">0 of 6 core exercises completed</span><progress id="progress-meter" max="6" value="0"></progress><a id="resume-link" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/exercise-1/`}>Start exercises →</a></div>
 </section>}
 <div class:list={{ 'summary-page': slug === 'summary' }}><Default><slot /></Default></div>
-{isExercise && <div class="completion-panel" data-page={slug} data-pagefind-ignore><label><input id="stage-complete" type="checkbox" /> Mark this exercise complete</label><span>Progress is saved in this browser.</span></div>}
+{isCompletable && <div class="completion-panel" data-page={slug} data-pagefind-ignore><label><input id="stage-complete" type="checkbox" /> {completionLabel}</label><span>Progress is saved in this browser.</span></div>}
 <dialog id="image-viewer" aria-label="Enlarged screenshot"><button type="button" class="close-viewer" autofocus>Close ×</button><img alt="" /><p></p></dialog>
 <script src="../scripts/workshop.js"></script>

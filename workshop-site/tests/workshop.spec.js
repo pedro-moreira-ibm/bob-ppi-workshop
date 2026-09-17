@@ -3,6 +3,12 @@ import { test, expect } from '@playwright/test';
 test('personalized copy and progress survive navigation and reload', async ({ page, context }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('./setup/');
+  await expect(page.locator('#stage-complete')).not.toBeChecked();
+  await expect(page.locator('.sl-markdown-content')).not.toContainText('✅ All set!');
+  await page.locator('#stage-complete').check();
+  await page.reload();
+  await expect(page.locator('#stage-complete')).toBeChecked();
+  await expect(page.getByRole('link', { name: 'Environment setup' })).toHaveClass(/stage-done/);
   await page.locator('#participant-number').selectOption('3');
   await expect(page.locator('#environment-label')).toHaveText('FLGHT403 · Port 3003');
   await page.goto('./exercise-3/');
@@ -144,6 +150,9 @@ test('summary celebrates completion without separate resource pages', async ({ p
   await expect(page.getByText('Resources', { exact: true })).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Application reference' })).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Sample skill' })).toHaveCount(0);
+  const bobIdePagination = page.locator('.pagination-links').getByRole('link', { name: /Bob IDE/ });
+  await expect(bobIdePagination).toHaveAttribute('target', '_blank');
+  await expect(bobIdePagination).toHaveAttribute('rel', /noopener/);
 });
 
 test('screenshots enlarge and close with Escape', async ({ page }) => {
